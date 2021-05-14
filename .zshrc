@@ -116,6 +116,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PG_OF_PATH="$HOME/alex/software/of-v0.11.0"
+export MYVIMRC="$HOME/.config/nvim/init.vim"
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
