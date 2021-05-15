@@ -65,9 +65,12 @@ endfunction
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
+" I don't really know if I'll ever need to format
+" just a section of the code instead of the whole
+" file.
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
 
@@ -129,3 +132,6 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " Prettier remaps to format a file
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+
+" Sets labels for `vim-sneak`
+let g:sneak#label = 1

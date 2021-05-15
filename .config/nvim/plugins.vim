@@ -19,17 +19,18 @@ call plug#begin(g:plug_home)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Syntax
+Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 Plug 'pangloss/vim-javascript'
 " Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
-
 
 " Themes
 Plug 'ntk148v/vim-horizon'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'sainnhe/sonokai'
 
 " Misc
 Plug 'tpope/vim-commentary'
@@ -37,6 +38,34 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-unimpaired'
+Plug 'justinmk/vim-sneak'
+Plug 'airblade/vim-gitgutter'
 
+" Additional powerful text object for vim, this plugin should be studied
+" carefully to use its full power
+Plug 'wellle/targets.vim'
+
+" Highlight URLs inside vim
+Plug 'itchyny/vim-highlighturl'
+
+" Show current search term in different color
+Plug 'PeterRincker/vim-searchlight'
+
+" match-up is a plugin that lets you highlight, navigate, and operate on sets of matching text.
+" It extends vim's % key to language-specific words instead of just single characters.
+Plug 'andymass/vim-matchup'
+
+" UI
+Plug 'mhinz/vim-startify'
+Plug 'psliwka/vim-smoothie'
 
 call plug#end()
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  matchup = {
+    enable = true,              -- mandatory, false will disable the whole extension
+    disable = { "c", "ruby" },  -- optional, list of language that will be disabled
+  },
+}
+EOF
