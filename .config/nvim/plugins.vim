@@ -59,6 +59,9 @@ Plug 'andymass/vim-matchup'
 Plug 'mhinz/vim-startify'
 Plug 'psliwka/vim-smoothie'
 
+" This plugin should always be the last one because of reasons.
+Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
 
 lua <<EOF
