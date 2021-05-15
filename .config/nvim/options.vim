@@ -96,4 +96,13 @@ set shiftround
 " see https://stackoverflow.com/q/4760428/6064933
 set nojoinspaces
 
+set backspace=indent,eol,start
+set complete-=i
+
+set nrformats-=octal
+
+" This will make all yank/delete/paste operations to use the system
+" register, avoiding having to type the dreaded characters each time
+" we write one of these operations.
+set clipboard=unnamed
 
