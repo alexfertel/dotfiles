@@ -18,6 +18,11 @@ call plug#begin(g:plug_home)
 " Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Fuzzy finder
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 " Syntax
 Plug 'nvim-treesitter/nvim-treesitter'
 " Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
@@ -31,9 +36,11 @@ Plug 'sheerun/vim-polyglot'
 " Themes
 Plug 'ntk148v/vim-horizon'
 Plug 'ghifarit53/tokyonight-vim'
+" Plug 'folke/tokyonight.nvim'
 Plug 'sainnhe/sonokai'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'marko-cerovac/material.nvim'
 
 " Misc
 Plug 'tpope/vim-commentary'
@@ -43,6 +50,8 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-unimpaired'
 Plug 'justinmk/vim-sneak'
 Plug 'airblade/vim-gitgutter'
+Plug 'folke/which-key.nvim'
+Plug 'norcalli/nvim-colorizer.lua'
 
 " Highlights words under the cursor
 Plug 'RRethy/vim-illuminate'
@@ -64,18 +73,10 @@ Plug 'andymass/vim-matchup'
 " UI
 Plug 'mhinz/vim-startify'
 Plug 'psliwka/vim-smoothie'
+Plug 'preservim/nerdtree'
 
 " This plugin should always be the last one because of reasons.
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
-
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  matchup = {
-    enable = true,              -- mandatory, false will disable the whole extension
-    disable = { "c", "ruby" },  -- optional, list of language that will be disabled
-  },
-}
-EOF
 
