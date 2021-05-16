@@ -75,6 +75,7 @@ Plug 'andymass/vim-matchup'
 Plug 'mhinz/vim-startify'
 Plug 'psliwka/vim-smoothie'
 Plug 'preservim/nerdtree'
+Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}
 
 " This plugin should always be the last one because of reasons.
 Plug 'ryanoasis/vim-devicons'
