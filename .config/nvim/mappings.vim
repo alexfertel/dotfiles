@@ -133,5 +133,10 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
+" Run jest for current test
+nnoremap <leader>te :call CocAction('runCommand', 'jest.singleTest')<CR>
+" Run jest for current file
+nnoremap <leader>tf :call CocAction('runCommand', 'jest.fileTest', ['%'])<CR>
+
 " Sets labels for `vim-sneak`
 let g:sneak#label = 1

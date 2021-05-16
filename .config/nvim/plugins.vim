@@ -20,17 +20,20 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Syntax
 Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
-Plug 'pangloss/vim-javascript'
+" Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
+" Plug 'pangloss/vim-javascript'
 " Plug 'yuezk/vim-js'
-Plug 'maxmellon/vim-jsx-pretty'
+" Plug 'maxmellon/vim-jsx-pretty'
+
+" A solid language pack (syntax highlighting)
+Plug 'sheerun/vim-polyglot'
 
 " Themes
 Plug 'ntk148v/vim-horizon'
 Plug 'ghifarit53/tokyonight-vim'
+Plug 'sainnhe/sonokai'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'sainnhe/sonokai'
 
 " Misc
 Plug 'tpope/vim-commentary'
@@ -40,6 +43,9 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-unimpaired'
 Plug 'justinmk/vim-sneak'
 Plug 'airblade/vim-gitgutter'
+
+" Highlights words under the cursor
+Plug 'RRethy/vim-illuminate'
 
 " Additional powerful text object for vim, this plugin should be studied
 " carefully to use its full power
@@ -72,3 +78,4 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
+
