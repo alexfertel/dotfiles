@@ -139,6 +139,7 @@ nnoremap <leader>te :call CocAction('runCommand', 'jest.singleTest')<CR>
 nnoremap <leader>tf :call CocAction('runCommand', 'jest.fileTest', ['%'])<CR>
 
 " Find files using Telescope command-line sugar.
+nnoremap <c-p> <cmd>Telescope git_files<cr>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
@@ -150,3 +151,15 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
+" Use ctrl-[hjkl] to select the active split!
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
+
+" Automatically wrap at 100 characters and spell check git commit messages
+autocmd FileType gitcommit setlocal textwidth=100
+autocmd FileType gitcommit setlocal spell
+
+" Enable spellchecking for Markdown
+autocmd FileType markdown setlocal spell
