@@ -75,7 +75,7 @@ plugins=(
 	docker
 	colored-man-pages
 	zsh-syntax-highlighting
-	zsh-autosuggestions
+	# zsh-autosuggestions
 	npm
 )
 
