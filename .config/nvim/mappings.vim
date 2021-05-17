@@ -137,6 +137,8 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 nnoremap <leader>te :call CocAction('runCommand', 'jest.singleTest')<CR>
 " Run jest for current file
 nnoremap <leader>tf :call CocAction('runCommand', 'jest.fileTest', ['%'])<CR>
+" Run jest for current file
+nnoremap <leader>tp :call CocAction('runCommand', 'jest.projectTest')<CR>
 
 " Find files using Telescope command-line sugar.
 nnoremap <c-p> <cmd>Telescope git_files<cr>
