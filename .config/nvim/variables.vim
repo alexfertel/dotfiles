@@ -22,3 +22,6 @@ let g:sneak#label = 1
 
 let g:startify_change_to_dir = 0
 
+let g:blamer_enabled = 1
+let g:blamer_delay = 500
+let g:blamer_relative_time = 1
