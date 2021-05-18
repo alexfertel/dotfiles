@@ -47,6 +47,10 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
+" Automatically wrap at 100 characters and spell check git commit messages
+autocmd FileType gitcommit setlocal textwidth=100
+autocmd FileType gitcommit setlocal spell
 
-
+" Enable spellchecking for Markdown
+autocmd FileType markdown setlocal spell
 
