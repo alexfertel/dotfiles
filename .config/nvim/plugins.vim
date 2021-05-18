@@ -32,7 +32,7 @@ Plug 'nvim-treesitter/nvim-treesitter'
 " Plug 'maxmellon/vim-jsx-pretty'
 
 " A solid language pack (syntax highlighting)
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 
 " Themes
 Plug 'ntk148v/vim-horizon'

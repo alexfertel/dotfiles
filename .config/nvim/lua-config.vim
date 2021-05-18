@@ -65,3 +65,14 @@ require('telescope').setup{
 }
 require('telescope').load_extension('fzy_native')
 EOF
+
+lua <<EOF
+require 'nvim-treesitter.install'.compilers = { "gcc", "clang" }
+
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { 'bash', 'cpp', 'comment', 'css', 'graphql', 'html', 'javascript', 'jsdoc', 'json', 'lua', 'python', 'regex', 'tsx', 'vue', 'typescript' },
+  highlight = { enable = true },
+  incremental_selection = { enable = true },
+  textobjects = { enable = true },
+}
+EOF
