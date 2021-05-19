@@ -1,6 +1,7 @@
 {
   "eslint.lintTask.options": ["src"],
   "suggest.noselect": false,
+  "suggest.keepCompleteopt": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "typescript",

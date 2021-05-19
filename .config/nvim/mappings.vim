@@ -27,11 +27,9 @@ function! s:check_back_space() abort
 endfunction
 
 " Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
+inoremap <silent><expr> <c-space> coc#refresh()
+" Use <c-space> to trigger completion.
+" nnoremap <silent><nowait> <c-space> :<C-u>CocAction<CR>    
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
@@ -131,7 +129,7 @@ nnoremap <silent><nowait> <leader>p  :<C-u>CocListResume<CR>
 " Run `eslint src` in the current project and populate the
 " quickfix list with the results. Notice that the `src` arg
 " comes from the CocConfig.
-nnoremap <silent><nowait> <leader>p  :<C-u>CocListResume<CR>
+nnoremap <silent><nowait> <leader>el  :<C-u>CocCommand eslint.lintProject<CR>
 
 " Prettier remaps to format a file
 vnoremap <silent><nowait> <leader>i :<C-u>Prettier<CR>    
@@ -167,3 +165,17 @@ nmap <silent> <c-l> :wincmd l<CR>
 
 " This will reload init.vim from inside nvim
 nnoremap <leader>sv :source $MYVIMRC<CR>
+
+" Remaps Scroll up and down
+map <M-k> <C-u>
+map <M-j> <C-d>
+
+" Close buffer/tab
+nnoremap <silent> <M-w> :bd <CR>
+
+" Next buffer
+nnoremap <silent> <M-l> :bn <CR>
+nnoremap <silent> <M-h> :bp <CR>
+
+
+

@@ -23,12 +23,7 @@ set shortmess+=c
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
-if has("nvim-0.5.0") || has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
+set signcolumn=number
 
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
@@ -105,4 +100,10 @@ set nrformats-=octal
 " register, avoiding having to type the dreaded characters each time
 " we write one of these operations.
 set clipboard=unnamed
+
+" Adds a little margin
+set foldcolumn=1                                          
+" Line number column width
+set numberwidth=4                                         
+set showcmd                                               " Shows entered commands
 
