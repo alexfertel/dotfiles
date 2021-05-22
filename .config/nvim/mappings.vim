@@ -152,10 +152,15 @@ nnoremap <leader>fq <cmd>Telescope quickfix<cr>
 nnoremap <leader>fB <cmd>Telescope git_branches<cr>
 
 " NERDTree mapppings
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+" nnoremap <leader>n :NERDTreeFocus<CR>
+" nnoremap <C-n> :NERDTree<CR>
+" nnoremap <C-t> :NERDTreeToggle<CR>
+" nnoremap <C-f> :NERDTreeFind<CR>
+
+" nvim-tree mapppings
+nnoremap <leader>t :NvimTreeToggle<CR>
+nnoremap <leader>r :NvimTreeRefresh<CR>
+nnoremap <leader>n :NvimTreeFindFile<CR>
 
 " Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
@@ -171,11 +176,42 @@ map <M-k> <C-u>
 map <M-j> <C-d>
 
 " Close buffer/tab
-nnoremap <silent> <M-w> :bd <CR>
+" nnoremap <silent> <M-w> :bd <CR>
 
-" Next buffer
-nnoremap <silent> <M-l> :bn <CR>
-nnoremap <silent> <M-h> :bp <CR>
+" " Next buffer
+" nnoremap <silent> <M-l> :bn <CR>
+" nnoremap <silent> <M-h> :bp <CR>
 
+" Move to previous/next
+nnoremap <silent>    <M-h> :BufferPrevious<CR>
+nnoremap <silent>    <M-l> :BufferNext<CR>
+" Re-order to previous/next
+nnoremap <silent>    <M-<> :BufferMovePrevious<CR>
+nnoremap <silent>    <M->> :BufferMoveNext<CR>
+" Goto buffer in position...
+nnoremap <silent>    <M-1> :BufferGoto 1<CR>
+nnoremap <silent>    <M-2> :BufferGoto 2<CR>
+nnoremap <silent>    <M-3> :BufferGoto 3<CR>
+nnoremap <silent>    <M-4> :BufferGoto 4<CR>
+nnoremap <silent>    <M-5> :BufferGoto 5<CR>
+nnoremap <silent>    <M-6> :BufferGoto 6<CR>
+nnoremap <silent>    <M-7> :BufferGoto 7<CR>
+nnoremap <silent>    <M-8> :BufferGoto 8<CR>
+nnoremap <silent>    <M-9> :BufferLast<CR>
+" Close buffer
+nnoremap <silent>    <M-w> :BufferClose<CR>
+nnoremap <silent>    <M-t> :lua require('tree').open()<CR>
+nnoremap <silent>    <C-t> :lua require('tree').close()<CR>
 
+" Wipeout buffer
+"                          :BufferWipeout<CR>
+" Close commands
+"                          :BufferCloseAllButCurrent<CR>
+"                          :BufferCloseBuffersLeft<CR>
+"                          :BufferCloseBuffersRight<CR>
+" Magic buffer-picking mode
+" nnoremap <silent> <C-s>    :BufferPick<CR>
+" Sort automatically by...
+" nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
+" nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
 

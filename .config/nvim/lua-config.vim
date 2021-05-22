@@ -1,15 +1,13 @@
-lua <<EOF
+lua << EOF
 require'nvim-treesitter.configs'.setup {
   matchup = {
     enable = true,              -- mandatory, false will disable the whole extension
     disable = { "c", "ruby" },  -- optional, list of language that will be disabled
   },
 }
-EOF
 
-lua require'colorizer'.setup()
+require'colorizer'.setup()
 
-lua << EOF
 require('telescope').setup{
   defaults = {
     vimgrep_arguments = {
@@ -63,16 +61,15 @@ require('telescope').setup{
         }
     }
 }
+
 require('telescope').load_extension('fzy_native')
-EOF
 
-lua <<EOF
 require 'nvim-treesitter.install'.compilers = { "gcc", "clang" }
-
 require'nvim-treesitter.configs'.setup {
   ensure_installed = { 'bash', 'cpp', 'comment', 'css', 'graphql', 'html', 'javascript', 'jsdoc', 'json', 'lua', 'python', 'regex', 'tsx', 'vue', 'typescript' },
   highlight = { enable = true },
   incremental_selection = { enable = true },
   textobjects = { enable = true },
 }
+
 EOF

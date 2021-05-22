@@ -39,8 +39,6 @@ Plug 'ntk148v/vim-horizon'
 Plug 'ghifarit53/tokyonight-vim'
 " Plug 'folke/tokyonight.nvim'
 Plug 'sainnhe/sonokai'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'marko-cerovac/material.nvim'
 
 " Misc
@@ -74,12 +72,17 @@ Plug 'PeterRincker/vim-searchlight'
 Plug 'andymass/vim-matchup'
 
 " UI
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'mhinz/vim-startify'
 Plug 'psliwka/vim-smoothie'
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'romgrk/barbar.nvim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " This plugin should always be the last one because of reasons.
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
