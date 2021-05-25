@@ -48,11 +48,13 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-dispatch'
 Plug 'APZelos/blamer.nvim'
 Plug 'justinmk/vim-sneak'
 Plug 'airblade/vim-gitgutter'
 Plug 'folke/which-key.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'vim-test/vim-test'
 
 " Highlights words under the cursor
 Plug 'RRethy/vim-illuminate'

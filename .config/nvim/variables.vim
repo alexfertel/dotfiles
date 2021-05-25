@@ -96,3 +96,7 @@ let bufferline.letters =
 let bufferline.no_name_title = v:null
 
 let g:vimsyn_embed = 'l'
+
+" make test commands execute using dispatch.vim
+" let g:test#strategy = "neovim"
+" let g:test#neovim#term_position = "vertical belowright"

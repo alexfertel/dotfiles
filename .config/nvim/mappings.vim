@@ -136,16 +136,33 @@ vnoremap <silent><nowait> <leader>i :<C-u>Prettier<CR>
 nnoremap <silent><nowait> <leader>i :<C-u>Prettier<CR>    
 
 " Run jest for current test
-nnoremap <leader>te :call CocAction('runCommand', 'jest.singleTest')<CR>
+nnoremap <leader>cte :call CocAction('runCommand', 'jest.singleTest')<CR>
 " Run jest for current file
-nnoremap <leader>tf :call CocAction('runCommand', 'jest.fileTest', ['%'])<CR>
+nnoremap <leader>ctf :call CocAction('runCommand', 'jest.fileTest', ['%'])<CR>
 " Run jest for current file
-nnoremap <leader>tp :call CocAction('runCommand', 'jest.projectTest')<CR>
+nnoremap <leader>ctp :call CocAction('runCommand', 'jest.projectTest')<CR>
+
+" vim-test mappings
+" nmap <silent> <leader>rtn :TestNearest<CR>
+" nmap <silent> <leader>rtf :TestFile<CR>
+" nmap <silent> <leader>rts :TestSuite<CR>
+" nmap <silent> <leader>rtl :TestLast<CR>
+" nmap <silent> <leader>rtg :TestVisit<CR>
+
+" On Neovim the "basic" and "neovim" strategies will run test 
+" commands using Neovim's terminal, and leave you in insert mode,
+" so that you can just press "Enter" to close the terminal session and go back to editing.
+" If you want to scroll through the test command output, you'll have to first switch to normal mode.
+" The built-in mapping for exiting terminal insert mode is CTRL-\ CTRL-n,
+" which is difficult to press, so I recommend mapping it to CTRL-o:
+if has('nvim')
+  tmap <C-o> <C-\><C-n>
+endif
 
 " Find files using Telescope command-line sugar.
 nnoremap <c-p> <cmd>Telescope git_files<cr>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>lg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fq <cmd>Telescope quickfix<cr>
@@ -158,9 +175,9 @@ nnoremap <leader>fB <cmd>Telescope git_branches<cr>
 " nnoremap <C-f> :NERDTreeFind<CR>
 
 " nvim-tree mapppings
-nnoremap <leader>t :NvimTreeToggle<CR>
-nnoremap <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>n :NvimTreeFindFile<CR>
+nnoremap <leader>ntt :NvimTreeToggle<CR>
+nnoremap <leader>ntr :NvimTreeRefresh<CR>
+nnoremap <leader>ntn :NvimTreeFindFile<CR>
 
 " Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
@@ -246,3 +263,7 @@ if maparg('<leader>*', 'v') == ''
   vnoremap <leader>* :<C-u>call VisualStarSearchSet('/')<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
 endif
 
+" vim-fugitive remaps
+nnoremap <leader>gs :<C-u>G<CR>
+nnoremap <leader>gh :diffget //2<CR>
+nnoremap <leader>gl :diffget //3<CR>
