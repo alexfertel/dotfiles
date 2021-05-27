@@ -267,3 +267,9 @@ endif
 nnoremap <leader>gs :<C-u>G<CR>
 nnoremap <leader>gh :diffget //2<CR>
 nnoremap <leader>gl :diffget //3<CR>
+
+" Make the experience in the terminal more consisten
+if has('nvim')
+    tnoremap <Esc> <C-\><C-n>
+    tnoremap <C-v><Esc> <Esc>
+endif
