@@ -1,0 +1,9 @@
+[user]
+	email = alexfertel97@gmail.com
+	name = Alexander Gonzalez
+[alias]
+	co = checkout
+[core]
+	editor = nvim
+[credential]
+	helper = cache --timeout=31557600
