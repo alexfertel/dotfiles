@@ -1,7 +1,6 @@
 {
   "eslint.lintTask.options": ["src"],
   "suggest.noselect": false,
-  "suggest.keepCompleteopt": true,
   "typescript.preferences.importModuleSpecifier": "relative",
   "javascript.preferences.importModuleSpecifier": "relative",
   "coc.preferences.formatOnSaveFiletypes": [
