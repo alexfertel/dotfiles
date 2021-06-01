@@ -8,6 +8,7 @@ show_milliseconds = true
 [directory]
 truncation_length = 10
 truncate_to_repo = false
+style = "red"
 
 [line_break]
 disabled = true
@@ -17,17 +18,17 @@ disabled = false
 
 [time]
 disabled = false
-format = 'at [\[$time\]](bold green) '
+format = 'at [\[$time\]](bold cyan) '
 use_12hr = true
 
 [username]
-format       = "[$user](yellow) at "
+format       = "[$user](blue) at "
 disabled     = false
 show_always  = true
 
 [hostname]
 ssh_only = false
-format   = "[$hostname](bold yellow) "
+format   = "[$hostname](bold blue) "
 disabled = false
 
 [nodejs]
