@@ -4,6 +4,7 @@
   "typescript.preferences.importModuleSpecifier": "relative",
   "javascript.preferences.importModuleSpecifier": "relative",
   "coc.preferences.formatOnSaveFiletypes": [
+    "rust",
     "javascript",
     "typescript",
     "typescriptreact",
