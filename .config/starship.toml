@@ -1,0 +1,37 @@
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+[cmd_duration]
+min_time = 500
+show_milliseconds = true
+
+[directory]
+truncation_length = 10
+truncate_to_repo = false
+
+[line_break]
+disabled = true
+
+[status]
+disabled = false
+
+[time]
+disabled = false
+format = 'at [\[$time\]](bold green) '
+use_12hr = true
+
+[username]
+format       = "[$user](yellow) at "
+disabled     = false
+show_always  = true
+
+[hostname]
+ssh_only = false
+format   = "[$hostname](bold yellow) "
+disabled = false
+
+[nodejs]
+disabled = true
+
+[git_branch]
+disabled = true
