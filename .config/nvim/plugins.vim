@@ -80,7 +80,7 @@ Plug 'mhinz/vim-startify'
 Plug 'psliwka/vim-smoothie'
 " Plug 'preservim/nerdtree'
 " Plug 'kyazdani42/nvim-tree.lua'
-" Plug 'romgrk/barbar.nvim'
+Plug 'romgrk/barbar.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
