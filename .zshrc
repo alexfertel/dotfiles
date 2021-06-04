@@ -119,6 +119,8 @@ export PG_OF_PATH="$HOME/alex/software/of-v0.11.0"
 export MYVIMRC="$HOME/.config/nvim/init.vim"
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias ll='exa -l'
+alias lla='exa -la'
 
 autoload -Uz compinit
 compinit
