@@ -41,6 +41,9 @@ Plug 'ghifarit53/tokyonight-vim'
 " Plug 'folke/tokyonight.nvim'
 Plug 'sainnhe/sonokai'
 Plug 'marko-cerovac/material.nvim'
+Plug 'Luxed/ayu-vim'
+" Plug 'Shatur/neovim-ayu'
+" Plug 'CantoroMC/neovim-ayu'
 
 " Misc
 Plug 'tpope/vim-commentary'
@@ -56,6 +59,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'folke/which-key.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'vim-test/vim-test'
+Plug 'jiangmiao/auto-pairs'
 
 " Highlights words under the cursor
 Plug 'RRethy/vim-illuminate'

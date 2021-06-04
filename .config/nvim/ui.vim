@@ -8,13 +8,18 @@ set termguicolors
 " let g:sonokai_better_performance = 1
 
 " let g:lightline = {'colorscheme' : 'horizon'}
-let g:tokyonight_style = 'storm' " available: night, storm
+" let g:tokyonight_style = 'storm' " available: night, storm
 " let g:tokyonight_enable_italic = 1
 " let g:airline_theme = "tokyonight"
 " let g:airline_theme = "material"
 let g:airline_theme = "sonokai"
 
+let g:ayucolor="mirage"
+" let ayucolor="mirage"
+" lua vim.g.ayu_mirage = true
+
 " colorscheme horizon
-colorscheme tokyonight
+" colorscheme tokyonight
 " colorscheme sonokai
 " colorscheme material
+colorscheme ayu

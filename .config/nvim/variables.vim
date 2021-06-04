@@ -100,3 +100,6 @@ let g:vimsyn_embed = 'l'
 " make test commands execute using dispatch.vim
 " let g:test#strategy = "neovim"
 " let g:test#neovim#term_position = "vertical belowright"
+
+" This activates 'fly mode' for the autopairs plugin
+let g:AutoPairsFlyMode = 1
