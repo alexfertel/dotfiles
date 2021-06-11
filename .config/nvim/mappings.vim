@@ -273,3 +273,6 @@ if has('nvim')
     tnoremap <Esc> <C-\><C-n>
     tnoremap <C-v><Esc> <Esc>
 endif
+
+" Goyo remaps
+nnoremap <leader>go :<C-u>Goyo 100+8<CR>

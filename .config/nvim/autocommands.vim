@@ -56,3 +56,6 @@ autocmd FileType gitcommit setlocal spell
 " Enable spellchecking for Markdown
 autocmd FileType markdown setlocal spell
 
+" Enabling Limelight to be tied to Goyo
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
