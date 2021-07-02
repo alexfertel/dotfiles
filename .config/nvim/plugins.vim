@@ -62,6 +62,8 @@ Plug 'folke/which-key.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'vim-test/vim-test'
 Plug 'jiangmiao/auto-pairs'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " Highlights words under the cursor
 Plug 'RRethy/vim-illuminate'
