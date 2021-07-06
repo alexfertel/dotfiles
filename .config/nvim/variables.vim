@@ -15,7 +15,7 @@ let g:airline_skip_empty_sections = 1
 " Speed up airline
 let g:airline_highlighting_cache = 1
 
-let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-css', 'coc-cssmodules', 'coc-html', 'coc-omnisharp', 'coc-jedi', 'coc-snippets', 'coc-prettier', 'coc-svg', 'coc-tsserver', 'coc-vimlsp', 'coc-eslint', 'coc-jest']
+let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-css', 'coc-cssmodules', 'coc-html', 'coc-omnisharp', 'coc-pyright', 'coc-snippets', 'coc-prettier', 'coc-svg', 'coc-tsserver', 'coc-vimlsp', 'coc-eslint', 'coc-jest']
 
 " Sets labels for `vim-sneak`
 let g:sneak#label = 1
@@ -105,6 +105,6 @@ let g:vimsyn_embed = 'l'
 let g:AutoPairsFlyMode = 1
 
 " This are remaps needed for compatibility with coc.nvim
-let g:UltiSnipsExpandTrigger="<CR>"
+let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
