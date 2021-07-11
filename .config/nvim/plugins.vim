@@ -15,8 +15,11 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 " Plugins
 call plug#begin(g:plug_home)
 
+" LSP related plugins
+Plug 'neovim/nvim-lspconfig'
+
 " Completion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 
 " Fuzzy finder
 Plug 'nvim-lua/popup.nvim'

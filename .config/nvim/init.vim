@@ -4,6 +4,7 @@ let g:config_file_list = ['variables.vim',
   \ 'mappings.vim',
   \ 'plugins.vim',
   \ 'ui.vim',
+  \ 'servers.vim',
   \ 'lua-config.vim'
   \ ]
 
