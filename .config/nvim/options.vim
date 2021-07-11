@@ -81,7 +81,8 @@ set history=500  " The number of command and search history to keep
 set shortmess+=c
 
 " Completion behaviour
-set completeopt+=menuone  " Show menu even if there is only one item
+" set completeopt+=menuone  " Show menu even if there is only one item
+set completeopt=menuone,noselect
 
 " Align indent to next multiple value of shiftwidth. For its meaning,
 " see http://vim.1045645.n5.nabble.com/shiftround-option-td5712100.html
