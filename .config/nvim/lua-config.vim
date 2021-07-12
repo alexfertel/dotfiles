@@ -8,6 +8,7 @@ require'nvim-treesitter.configs'.setup {
 
 require'colorizer'.setup()
 
+require('telescope').load_extension('fzy_native')
 require('telescope').setup{
   defaults = {
     vimgrep_arguments = {
@@ -27,8 +28,6 @@ require('telescope').setup{
     sorting_strategy = "ascending",
     layout_strategy = "horizontal",
     layout_config = {
-      width = 0.75,
-      preview_cutoff = 120,
       prompt_position = "top",
       horizontal = {
         mirror = false,
@@ -38,14 +37,14 @@ require('telescope').setup{
       },
     },
     file_sorter =  require'telescope.sorters'.get_fzy_sorter,
-    file_ignore_patterns = { 'node_modules/.*', 'package-lock.json' },
+    file_ignore_patterns = {},
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
-    path_display = true,
     winblend = 0,
     border = {},
     borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
     color_devicons = true,
     use_less = true,
+    path_display = {},
     set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
     file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
@@ -59,8 +58,6 @@ require('telescope').setup{
         }
     }
 }
-
-require('telescope').load_extension('fzy_native')
 
 require 'nvim-treesitter.install'.compilers = { "gcc", "clang" }
 require'nvim-treesitter.configs'.setup {
