@@ -27,6 +27,7 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 " Syntax
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'cespare/vim-toml'
+Plug 'lervag/vimtex'
 " Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 " Plug 'pangloss/vim-javascript'
 " Plug 'yuezk/vim-js'
