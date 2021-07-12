@@ -9,4 +9,4 @@ tree.close = function ()
    require'nvim-tree'.close()
 end
 
-return tree 
+return tree

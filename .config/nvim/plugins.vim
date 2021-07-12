@@ -17,9 +17,14 @@ call plug#begin(g:plug_home)
 
 " LSP related plugins
 Plug 'neovim/nvim-lspconfig'
+Plug 'kabouzeid/nvim-lspinstall'
+
+" Code actions
+Plug 'kosayoda/nvim-lightbulb'
 
 " Completion
-
+Plug 'hrsh7th/nvim-compe'
+Plug 'onsails/lspkind-nvim/'
 
 " Fuzzy finder
 Plug 'nvim-lua/popup.nvim'
@@ -68,6 +73,7 @@ Plug 'jiangmiao/auto-pairs'
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
 Plug 'L3MON4D3/LuaSnip'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Highlights words under the cursor
 Plug 'RRethy/vim-illuminate'

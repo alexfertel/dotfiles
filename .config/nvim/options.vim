@@ -108,3 +108,4 @@ set foldcolumn=1
 set numberwidth=4                                         
 set showcmd                                               " Shows entered commands
 
+highlight link CompeDocumentation NormalFloat

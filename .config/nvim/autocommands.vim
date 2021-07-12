@@ -27,3 +27,7 @@ autocmd FileType markdown setlocal spell
 " Enabling Limelight to be tied to Goyo
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+
+" Show available code actions using a bulb icon when holding the cursor
+" in the current line
+autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()
