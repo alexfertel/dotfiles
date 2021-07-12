@@ -1,13 +1,13 @@
 let g:config_file_list = ['variables.vim',
   \ 'options.vim',
   \ 'autocommands.vim',
-  \ 'mappings.vim',
   \ 'plugins.vim',
   \ 'ui.vim',
   \ 'servers.vim',
   \ 'completion.vim',
   \ 'lsp-related.vim',
-  \ 'lua-config.vim'
+  \ 'lua-config.vim',
+  \ 'mappings.vim',
   \ ]
 
 let g:nvim_config_root = expand('<sfile>:p:h')
