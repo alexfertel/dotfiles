@@ -36,3 +36,6 @@ disabled = true
 
 [git_branch]
 disabled = true
+
+[git_metrics]
+disabled = false
