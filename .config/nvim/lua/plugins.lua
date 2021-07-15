@@ -3,72 +3,72 @@ require('paq-nvim') {
 
     -- lsp
     'neovim/nvim-lspconfig';
-    'kabouzeid/nvim-lspinstall'
+    'kabouzeid/nvim-lspinstall';
     'hrsh7th/nvim-compe';
-    'folke/trouble.nvim'
-    'kosayoda/nvim-lightbulb'
-    'onsails/lspkind-nvim/'
+    'folke/trouble.nvim';
+    'kosayoda/nvim-lightbulb';
+    'onsails/lspkind-nvim/';
 
     -- fuzzy finder
-    'nvim-lua/popup.nvim'
-    'nvim-lua/plenary.nvim'
-    'nvim-telescope/telescope.nvim'
-    'nvim-telescope/telescope-fzy-native.nvim'
+    'nvim-lua/popup.nvim';
+    'nvim-lua/plenary.nvim';
+    'nvim-telescope/telescope.nvim';
+    'nvim-telescope/telescope-fzy-native.nvim';
 
     -- syntax
-    'nvim-treesitter/nvim-treesitter'
-    'cespare/vim-toml'
-    'HerringtonDarkholme/yats.vim'
-    'pangloss/vim-javascript'
-    'yuezk/vim-js'
-    'maxmellon/vim-jsx-pretty'
+    'nvim-treesitter/nvim-treesitter';
+    'cespare/vim-toml';
+    'HerringtonDarkholme/yats.vim';
+    'pangloss/vim-javascript';
+    'yuezk/vim-js';
+    'maxmellon/vim-jsx-pretty';
 
     -- ui
-    'kyazdani42/nvim-web-devicons'
-    'mhinz/vim-startify'
-    'psliwka/vim-smoothie'
-    'kyazdani42/nvim-tree.lua'
-    'romgrk/barbar.nvim'
-    'vim-airline/vim-airline'
-    'vim-airline/vim-airline-themes'
+    'kyazdani42/nvim-web-devicons';
+    'mhinz/vim-startify';
+    'psliwka/vim-smoothie';
+    'kyazdani42/nvim-tree.lua';
+    'romgrk/barbar.nvim';
+    'vim-airline/vim-airline';
+    'vim-airline/vim-airline-themes';
 
     -- themes
-    'folke/tokyonight.nvim'
-    'sainnhe/sonokai'
-    'Luxed/ayu-vim'
+    'folke/tokyonight.nvim';
+    'sainnhe/sonokai';
+    'Luxed/ayu-vim';
 
     -- misc
-    'tpope/vim-commentary'
-    'tpope/vim-surround'
-    'tpope/vim-repeat'
-    'tpope/vim-speeddating'
-    'tpope/vim-unimpaired'
-    'tpope/vim-fugitive'
-    'tpope/vim-dispatch'
-    'junegunn/goyo.vim'
-    'junegunn/limelight.vim'
-    'APZelos/blamer.nvim'
-    'justinmk/vim-sneak'
-    'airblade/vim-gitgutter'
-    'folke/which-key.nvim'
-    'norcalli/nvim-colorizer.lua'
-    'vim-test/vim-test'
-    -- 'jiangmiao/auto-pairs'
-    'L3MON4D3/LuaSnip'
-    'lukas-reineke/indent-blankline.nvim'
-    'andymass/vim-matchup'
+    'tpope/vim-commentary';
+    'tpope/vim-surround';
+    'tpope/vim-repeat';
+    'tpope/vim-speeddating';
+    'tpope/vim-unimpaired';
+    'tpope/vim-fugitive';
+    'tpope/vim-dispatch';
+    'junegunn/goyo.vim';
+    'junegunn/limelight.vim';
+    'APZelos/blamer.nvim';
+    'justinmk/vim-sneak';
+    'airblade/vim-gitgutter';
+    'folke/which-key.nvim';
+    'norcalli/nvim-colorizer.lua';
+    'vim-test/vim-test';
+    -- 'jiangmiao/auto-pairs';
+    'L3MON4D3/LuaSnip';
+    'lukas-reineke/indent-blankline.nvim';
+    'andymass/vim-matchup';
 
-    -- 'RRethy/vim-illuminate'
+    -- 'RRethy/vim-illuminate';
 
     -- Additional powerful text object for vim, this plugin should be studied
     -- carefully to use its full power
-    'wellle/targets.vim'
+    'wellle/targets.vim';
 
     -- Highlight URLs inside vim
-    'itchyny/vim-highlighturl'
+    'itchyny/vim-highlighturl';
 
     -- Show current search term in different color
-    -- 'PeterRincker/vim-searchlight'
+    -- 'PeterRincker/vim-searchlight';
 
 
     -- Use braces when passing options
