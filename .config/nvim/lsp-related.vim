@@ -159,30 +159,30 @@ local function make_config()
 end
 
 -- lsp-install
---local function setup_servers()
---  require'lspinstall'.setup()
---
---  -- get all installed servers
---  -- local servers = require'lspinstall'.installed_servers()
---  -- ... and add manually installed servers
---  table.insert(servers, "clangd")
---
---  for _, server in pairs(servers) do
---    local config = make_config()
---
---    -- language specific config
---    if server == "lua" then
---      config.settings = lua_settings
---    end
---    if server == "clangd" then
---      config.filetypes = {"c", "cpp"}; -- we don't want objective-c and objective-cpp!
---    end
---
---    require'lspconfig'[server].setup(config)
---  end
---end
---
---setup_servers()
+local function setup_servers()
+  require'lspinstall'.setup()
+
+  -- get all installed servers
+  local servers = require'lspinstall'.installed_servers()
+  -- ... and add manually installed servers
+  table.insert(servers, "clangd")
+
+  for _, server in pairs(servers) do
+    local config = make_config()
+
+    -- language specific config
+    if server == "lua" then
+      config.settings = lua_settings
+    end
+    if server == "clangd" then
+      config.filetypes = {"c", "cpp"}; -- we don't want objective-c and objective-cpp!
+    end
+
+    require'lspconfig'[server].setup(config)
+  end
+end
+
+setup_servers()
 
 -- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
 require'lspinstall'.post_install_hook = function ()

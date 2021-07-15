@@ -18,6 +18,7 @@ call plug#begin(g:plug_home)
 " LSP related plugins
 Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
+Plug 'folke/trouble.nvim'
 
 " Code actions
 Plug 'kosayoda/nvim-lightbulb'

@@ -61,7 +61,23 @@ require('telescope').setup{
 
 require 'nvim-treesitter.install'.compilers = { "gcc", "clang" }
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { 'bash', 'cpp', 'comment', 'css', 'graphql', 'html', 'javascript', 'jsdoc', 'json', 'lua', 'python', 'regex', 'tsx', 'rust', 'vue', 'typescript' },
+  ensure_installed = { 'bash',
+  'cpp',
+  'comment',
+  'css',
+  'graphql',
+  'html',
+  'javascript',
+  'jsdoc',
+  'json',
+  'lua',
+  'python',
+  'regex',
+  'tsx',
+  'rust',
+  'vue',
+  'typescript'
+  },
   highlight = { enable = true },
   incremental_selection = { enable = true },
   textobjects = { enable = true },
