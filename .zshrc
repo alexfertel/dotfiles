@@ -116,14 +116,25 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PG_OF_PATH="$HOME/alex/software/of-v0.11.0"
-export MYVIMRC="$HOME/.config/nvim/init.vim"
+export MYCONFIG="$HOME/.config"
+export MYNVIMCONFIG="$MYCONFIG/nvim"
+export MYVIMRC="$MYNVIMCONFIG/init.vim"
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias d='dotfiles'
+alias dco='d checkout'
+alias dcmsg='d commit -m'
+alias dst='d status'
+alias daconfig='d add $MYNVIMCONFIG'
+alias dlog='d log --oneline --decorate --graph'
+alias dloga='dlog --all'
+
 alias ll='exa -l'
 alias lla='exa -la'
 
 autoload -Uz compinit
 compinit
+
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
 
