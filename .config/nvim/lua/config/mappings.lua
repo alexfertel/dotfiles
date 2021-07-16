@@ -64,12 +64,12 @@ util.nnoremap("<leader>bd", "<cmd>BufferLineSortByDirectory<CR>", { silent = tru
 -- Close buffer
 util.nnoremap("<M-w>", "<cmd>bd!<CR>", { silent = true })
 
-
 -- makes * and # work on visual mode too.  global function so user mappings can call it.
 -- specifying 'raw' for the second argument prevents escaping the result for vimgrep
 -- TODO: there's a bug with raw mode.  since we're using @/ to return an unescaped
 -- search string, vim's search highlight will be wrong.  Refactor plz.
-vim.cmd([[function! VisualStarSearchSet(cmdtype,...)
+vim.cmd(
+	[[function! VisualStarSearchSet(cmdtype,...)
 let temp = @"
 normal! gvy
 if !a:0 || a:1 != 'raw'
@@ -80,19 +80,24 @@ let @/ = substitute(@/, '\[', '\\[', 'g')
 let @/ = substitute(@/, '\~', '\\~', 'g')
 let @/ = substitute(@/, '\.', '\\.', 'g')
 let @" = temp
-endfunction]], false)
+endfunction]],
+	false
+)
 
 -- replace vim's built-in visual * and # behavior
 util.xnoremap("*", ":<C-u>call VisualStarSearchSet('/')<CR>/<C-R>=@/<CR><CR>")
 util.xnoremap("#", ":<C-u>call VisualStarSearchSet('?')<CR>?<C-R>=@/<CR><CR>")
 
 -- recursively vimgrep for word under cursor or selection
-vim.cmd([[if maparg('<leader>*', 'n') == ''
+vim.cmd(
+	[[if maparg('<leader>*', 'n') == ''
 nnoremap <leader>* :execute 'noautocmd vimgrep /\V' . substitute(escape(expand("<cword>"), '\'), '\n', '\\n', 'g') . '/ **'<CR>
 endif
 if maparg('<leader>*', 'v') == ''
 vnoremap <leader>* :<C-u>call VisualStarSearchSet('/')<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
-endif]], false)
+endif]],
+	false
+)
 
 -- vim-fugitive remaps
 util.nnoremap("<leader>gs", ":<C-u>G<CR>")
@@ -116,7 +121,11 @@ util.nnoremap("<leader>go", ":<C-u>Goyo 100+8<CR>")
 
 -- compe config for nvim-autopairs
 util.inoremap("<c-Space>", "compe#complete()", { silent = true, expr = true })
-util.inoremap("<cr>", [[compe#confirm(luaeval("require 'nvim-autopairs'.autopairs_cr()"))]], { silent = true, expr = true })
+util.inoremap(
+	"<cr>",
+	[[compe#confirm(luaeval("require 'nvim-autopairs'.autopairs_cr()"))]],
+	{ silent = true, expr = true }
+)
 util.inoremap("<c-e>", "compe#close('<C-e>')", { silent = true, expr = true })
 util.inoremap("<c-f>", "compe#scroll({ 'delta': +4 })", { silent = true, expr = true })
 util.inoremap("<c-d>", "compe#scroll({ 'delta': -4 })", { silent = true, expr = true })
@@ -131,4 +140,3 @@ util.nnoremap("gR", "<cmd>TroubleToggle lsp_references<cr>")
 
 -- copy whole file content
 util.nnoremap("<C-a>", [[ <Cmd> %y+<CR>]], { silent = true })
-

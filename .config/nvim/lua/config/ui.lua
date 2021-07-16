@@ -1,14 +1,14 @@
 vim.o.termguicolors = true
 
 local g = vim.g
-g.sonokai_style = 'default'
-g.sonokai_cursor = 'red'
+g.sonokai_style = "default"
+g.sonokai_cursor = "red"
 g.sonokai_diagnostic_line_highlight = 1
-g.sonokai_diagnostic_virtual_text = 'colored'
+g.sonokai_diagnostic_virtual_text = "colored"
 g.sonokai_better_performance = 1
 
 -- g.lightline = {'colorscheme' : 'horizon'}
-g.tokyonight_style = 'storm'
+g.tokyonight_style = "storm"
 g.tokyonight_enable_italic = 1
 g.airline_theme = "tokyonight"
 g.airline_theme = "material"
@@ -20,6 +20,6 @@ g.ayucolor = "mirage"
 
 -- colorscheme horizon
 -- colorscheme tokyonight
-vim.cmd('colorscheme sonokai')
+vim.cmd("colorscheme sonokai")
 -- colorscheme material
 -- colorscheme ayu
