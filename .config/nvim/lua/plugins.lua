@@ -7,28 +7,29 @@ require('paq-nvim') {
     'hrsh7th/nvim-compe';
     'folke/trouble.nvim';
     'kosayoda/nvim-lightbulb';
-    'onsails/lspkind-nvim/';
+    'onsails/lspkind-nvim';
 
     -- fuzzy finder
     'nvim-lua/popup.nvim';
     'nvim-lua/plenary.nvim';
     'nvim-telescope/telescope.nvim';
-    'nvim-telescope/telescope-fzy-native.nvim';
+    -- { 'nvim-telescope/telescope-fzy-native.nvim', run='git submodule update --init --recursive' };
 
     -- syntax
     'nvim-treesitter/nvim-treesitter';
     'cespare/vim-toml';
-    'HerringtonDarkholme/yats.vim';
-    'pangloss/vim-javascript';
-    'yuezk/vim-js';
-    'maxmellon/vim-jsx-pretty';
+    'folke/lua-dev.nvim';
+    -- 'HerringtonDarkholme/yats.vim';
+    -- 'pangloss/vim-javascript';
+    -- 'yuezk/vim-js';
+    -- 'maxmellon/vim-jsx-pretty';
 
     -- ui
     'kyazdani42/nvim-web-devicons';
     'mhinz/vim-startify';
     'psliwka/vim-smoothie';
     'kyazdani42/nvim-tree.lua';
-    'romgrk/barbar.nvim';
+    'akinsho/nvim-bufferline.lua';
     'vim-airline/vim-airline';
     'vim-airline/vim-airline-themes';
 
@@ -53,12 +54,11 @@ require('paq-nvim') {
     'folke/which-key.nvim';
     'norcalli/nvim-colorizer.lua';
     'vim-test/vim-test';
-    -- 'jiangmiao/auto-pairs';
+    'windwp/nvim-autopairs';
     'L3MON4D3/LuaSnip';
     'lukas-reineke/indent-blankline.nvim';
     'andymass/vim-matchup';
-
-    -- 'RRethy/vim-illuminate';
+    'RRethy/vim-illuminate';
 
     -- Additional powerful text object for vim, this plugin should be studied
     -- carefully to use its full power
@@ -70,7 +70,6 @@ require('paq-nvim') {
     -- Show current search term in different color
     -- 'PeterRincker/vim-searchlight';
 
-
-    -- Use braces when passing options
+    -- Support for latex files
     {"lervag/vimtex", opt=true};      
 }

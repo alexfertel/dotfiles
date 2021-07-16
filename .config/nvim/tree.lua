@@ -1,4 +1,4 @@
-local tree ={}
+local tree = {}
 tree.open = function ()
    require'bufferline.state'.set_offset(41, 'FileTree')
    require'nvim-tree'.find_file(true)

@@ -1,3 +1,4 @@
+vim.cmd([[
 " Sometimes syntax highlighting for these files is broken
 " especially for very large files, so just do it every time
 " we open these kind of files.
@@ -31,3 +32,4 @@ autocmd! User GoyoLeave Limelight!
 " Show available code actions using a bulb icon when holding the cursor
 " in the current line
 autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()
+]])

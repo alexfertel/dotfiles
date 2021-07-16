@@ -1,9 +1,7 @@
 vim.o.termguicolors = true
 
 local g = vim.g
-g.sonokai_style = 
-
-g.sonokai_style = 'andromeda'
+g.sonokai_style = 'default'
 g.sonokai_cursor = 'red'
 g.sonokai_diagnostic_line_highlight = 1
 g.sonokai_diagnostic_virtual_text = 'colored'
@@ -22,6 +20,6 @@ g.ayucolor = "mirage"
 
 -- colorscheme horizon
 -- colorscheme tokyonight
-colorscheme sonokai
+vim.cmd('colorscheme sonokai')
 -- colorscheme material
 -- colorscheme ayu

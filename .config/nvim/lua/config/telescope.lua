@@ -1,15 +1,8 @@
-lua << EOF
-require'nvim-treesitter.configs'.setup {
-  matchup = {
-    enable = true,              -- mandatory, false will disable the whole extension
-    disable = { "c", "ruby" },  -- optional, list of language that will be disabled
-  },
-}
+local trouble = require("trouble.providers.telescope")
+local telescope = require("telescope")
 
-require'colorizer'.setup()
-
-require('telescope').load_extension('fzy_native')
-require('telescope').setup{
+telescope.setup{
+  mappings = { i = { ["<c-t>"] = trouble.open_with_trouble } },
   defaults = {
     vimgrep_arguments = {
       'rg',
@@ -51,36 +44,13 @@ require('telescope').setup{
     qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
     buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
   },
-  extensions = {
-        fzy_native = {
-            override_generic_sorter = false,
-            override_file_sorter = true,
-        }
-    }
+  -- extensions = {
+  --       fzy_native = {
+  --           override_generic_sorter = false,
+  --           override_file_sorter = true,
+  --       }
+  --   }
 }
 
-require 'nvim-treesitter.install'.compilers = { "gcc", "clang" }
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = { 'bash',
-  'cpp',
-  'comment',
-  'css',
-  'graphql',
-  'html',
-  'javascript',
-  'jsdoc',
-  'json',
-  'lua',
-  'python',
-  'regex',
-  'tsx',
-  'rust',
-  'vue',
-  'typescript'
-  },
-  highlight = { enable = true },
-  incremental_selection = { enable = true },
-  textobjects = { enable = true },
-}
+-- telescope.load_extension('fzy_native')
 
-EOF

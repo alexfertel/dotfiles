@@ -70,6 +70,9 @@ end
 function M.omap(key, cmd, opts)
   return map("o", key, cmd, opts)
 end
+function M.tmap(key, cmd, opts)
+  return map("t", key, cmd, opts)
+end
 function M.smap(key, cmd, opts)
   return map("s", key, cmd, opts)
 end
@@ -85,6 +88,9 @@ function M.xnoremap(key, cmd, opts)
 end
 function M.inoremap(key, cmd, opts)
   return map("i", key, cmd, opts, { noremap = true })
+end
+function M.tnoremap(key, cmd, opts)
+  return map("t", key, cmd, opts, { noremap = true })
 end
 function M.onoremap(key, cmd, opts)
   return map("o", key, cmd, opts, { noremap = true })
