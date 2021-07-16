@@ -85,6 +85,8 @@ eval "$(pyenv virtualenv-init -)"
 
 fpath+=~/.zfunc
 export PATH="$HOME/.poetry/bin:$PATH"
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
 
 source $ZSH/oh-my-zsh.sh
 
@@ -116,14 +118,25 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PG_OF_PATH="$HOME/alex/software/of-v0.11.0"
-export MYVIMRC="$HOME/.config/nvim/init.vim"
+export MYCONFIG="$HOME/.config"
+export MYNVIMCONFIG="$MYCONFIG/nvim"
+export MYVIMRC="$MYNVIMCONFIG/init.lua"
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias d='dotfiles'
+alias dco='d checkout'
+alias dcmsg='d commit -m'
+alias dst='d status'
+alias daconfig='d add $MYNVIMCONFIG'
+alias dlog='d log --oneline --decorate --graph'
+alias dloga='dlog --all'
+
 alias ll='exa -l'
 alias lla='exa -la'
 
 autoload -Uz compinit
 compinit
+
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
 
@@ -133,3 +146,5 @@ eval "$(zoxide init zsh)"
 # starship prompt
 eval "$(starship init zsh)"
 
+
+alias luamake=/home/alex/alex/software/lsps/lua-language-server/3rd/luamake/luamake
