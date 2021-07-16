@@ -75,15 +75,12 @@ local servers = {
 		library = { plugins = { "nvim-treesitter", "plenary.nvim", "telescope.nvim" } },
 		lspconfig = { cmd = lua_cmd },
 	}),
-	-- ['null-ls'] = {},
 	efm = require("lsp.efm").config,
 	vimls = {},
 	tailwindcss = {},
 	diagnosticls = diagnosticls_config,
-	["rust_analyzer"] = {},
+	rust_analyzer = {},
 }
-
--- Mappings.
 
 local opts = { noremap = true, silent = true }
 util.nmap("gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
@@ -108,8 +105,6 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport = {
 	properties = { "documentation", "detail", "additionalTextEdits" },
 }
-
-require("lsp.null-ls").setup()
 
 for server, config in pairs(servers) do
 	lspconfig[server].setup(vim.tbl_deep_extend("force", {

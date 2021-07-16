@@ -10,14 +10,17 @@ vim.g.nobackup = true
 vim.g.nowritebackup = true
 
 -- Give more space for displaying messages.
-vim.opt.cmdheight = 3
+vim.opt.cmdheight = 4
 
 -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 -- delays and poor user experience.
-vim.opt.updatetime = 300
+vim.opt.updatetime = 150
 
 -- Don't pass messages to |ins-completion-menu|.
 vim.opt.shortmess:append("c")
+
+-- Display leading spaces and tabs
+vim.opt.listchars:append("lead:.")
 
 -- Always show the signcolumn, otherwise it would shift the text each time
 -- diagnostics appear/become resolved.

@@ -9,7 +9,6 @@ require("paq-nvim")({
 	"kosayoda/nvim-lightbulb",
 	"onsails/lspkind-nvim",
 	"jose-elias-alvarez/nvim-lsp-ts-utils",
-	"jose-elias-alvarez/null-ls.nvim",
 
 	-- fuzzy finder
 	"nvim-lua/popup.nvim",
@@ -52,7 +51,7 @@ require("paq-nvim")({
 	"junegunn/limelight.vim",
 	"APZelos/blamer.nvim",
 	"justinmk/vim-sneak",
-	"airblade/vim-gitgutter",
+	"lewis6991/gitsigns.nvim",
 	"folke/which-key.nvim",
 	"norcalli/nvim-colorizer.lua",
 	"vim-test/vim-test",

@@ -47,7 +47,7 @@ util.nnoremap("<leader>fB", "<cmd>Telescope git_branches<cr>")
 util.nnoremap("<leader>fc", "<cmd>Telescope lsp_code_actions<cr>")
 
 -- This will reload init.lua from inside nvim
-util.nnoremap("<leader>sv", "<cmd>source $MYVIMRC<CR>")
+util.nnoremap("<leader>sv", "<cmd>luafile $MYVIMRC<CR>")
 
 -- Remaps Scroll up and down
 util.map("", "<m-k>", "<c-u>")
