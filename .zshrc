@@ -120,7 +120,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PG_OF_PATH="$HOME/alex/software/of-v0.11.0"
 export MYCONFIG="$HOME/.config"
 export MYNVIMCONFIG="$MYCONFIG/nvim"
-export MYVIMRC="$MYNVIMCONFIG/init.vim"
+export MYVIMRC="$MYNVIMCONFIG/init.lua"
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias d='dotfiles'
