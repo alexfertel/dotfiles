@@ -85,6 +85,7 @@ eval "$(pyenv virtualenv-init -)"
 
 fpath+=~/.zfunc
 export PATH="$HOME/.poetry/bin:$PATH"
+export PATH=$PATH:/usr/local/go/bin
 
 source $ZSH/oh-my-zsh.sh
 
