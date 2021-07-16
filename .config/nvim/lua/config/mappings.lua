@@ -33,8 +33,8 @@ util.nmap("<c-h>", ":wincmd h<CR>", { silent = true })
 util.nmap("<c-l>", ":wincmd l<CR>", { silent = true })
 
 -- Prettier remaps to format a file
-util.nnoremap("<leader>i", ":<C-u>Prettier<CR>", { silent = true, nowait = true })
-util.vnoremap("<leader>i", ":<C-u>Prettier<CR>", { silent = true, nowait = true })
+-- util.nnoremap("<leader>i", ":<C-u>Prettier<CR>", { silent = true, nowait = true })
+-- util.vnoremap("<leader>i", ":<C-u>Prettier<CR>", { silent = true, nowait = true })
 
 -- Find files using Telescope command-line sugar.
 util.nnoremap("<c-p>", "<cmd>Telescope find_files<cr>")
@@ -58,8 +58,8 @@ util.nnoremap("<m-h>", "<cmd>BufferLineCyclePrev<CR>", { silent = true })
 util.nnoremap("<m-l>", "<cmd>BufferLineCycleNext<CR>", { silent = true })
 
 -- These commands will sort buffers by directory, language, or a custom criteria
-util.nnoremap("be", "<cmd>BufferLineSortByExtension", { silent = true })
-util.nnoremap("bd", "<cmd>BufferLineSortByDirectory<CR>", { silent = true })
+util.nnoremap("<leader>be", "<cmd>BufferLineSortByExtension", { silent = true })
+util.nnoremap("<leader>bd", "<cmd>BufferLineSortByDirectory<CR>", { silent = true })
 
 -- Close buffer
 util.nnoremap("<M-w>", "<cmd>bd!<CR>", { silent = true })
@@ -117,9 +117,9 @@ util.nnoremap("<leader>go", ":<C-u>Goyo 100+8<CR>")
 -- compe config for nvim-autopairs
 util.inoremap("<c-Space>", "compe#complete()", { silent = true, expr = true })
 util.inoremap("<cr>", [[compe#confirm(luaeval("require 'nvim-autopairs'.autopairs_cr()"))]], { silent = true, expr = true })
-util.inoremap("<c-e", "compe#close('<C-e>')", { silent = true, expr = true })
-util.inoremap("<c-f", "compe#scroll({ 'delta': +4 })", { silent = true, expr = true })
-util.inoremap("<c-f", "compe#scroll({ 'delta': -4 })", { silent = true, expr = true })
+util.inoremap("<c-e>", "compe#close('<C-e>')", { silent = true, expr = true })
+util.inoremap("<c-f>", "compe#scroll({ 'delta': +4 })", { silent = true, expr = true })
+util.inoremap("<c-d>", "compe#scroll({ 'delta': -4 })", { silent = true, expr = true })
 
 -- folke/trouble.nvim related mappings
 util.nnoremap("<leader>xx", "<cmd>TroubleToggle<cr>")

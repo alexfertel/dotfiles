@@ -81,7 +81,7 @@ vim.opt.shiftround = true
 -- see https://stackoverflow.com/q/4760428/6064933
 -- vim.opt.nojoinspaces = true
 
-vim.opt.backspace = 'indent', 'eol', 'start'
+vim.opt.backspace = { 'indent', 'eol', 'start' }
 vim.opt.complete:remove{ 'i' }
 vim.opt.nrformats:remove{ 'octal' }
 

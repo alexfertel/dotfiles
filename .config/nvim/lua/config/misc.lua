@@ -1,6 +1,5 @@
 require'colorizer'.setup()
 
-
 -- Makes * and # work on visual mode too.
 vim.api.nvim_exec(
   [[
@@ -30,16 +29,16 @@ vim.g.blamer_delay = 500
 vim.g.blamer_relative_time = 1
 
 
--- let g.vimsyn_embed = 'l'
+vim.g.vimsyn_embed = 'l'
 
--- -- make test commands execute using dispatch.vim
--- -- let g.test#strategy = --neovim--
--- -- let g.test#neovim#term_position = --vertical belowright--
+-- make test commands execute using dispatch.vim
+vim.g["test#strategy"] = "neovim"
+vim.g["test#neovim#term_position"] = "vertical belowright"
 
--- -- This activates 'fly mode' for the autopairs plugin
--- let g.AutoPairsFlyMode = 1
+-- This activates 'fly mode' for the autopairs plugin
+vim.g.AutoPairsFlyMode = 1
 
--- -- This are remaps needed for compatibility with coc.nvim
--- let g.UltiSnipsExpandTrigger=--<c-e>--
--- let g.UltiSnipsJumpForwardTrigger=--<c-b>--
--- let g.UltiSnipsJumpBackwardTrigger=--<c-z>--
+-- This are remaps needed for compatibility with coc.nvim
+vim.g.UltiSnipsExpandTrigger="<c-e>"
+vim.g.UltiSnipsJumpForwardTrigger="<c-b>"
+vim.g.UltiSnipsJumpBackwardTrigger="<c-z>"

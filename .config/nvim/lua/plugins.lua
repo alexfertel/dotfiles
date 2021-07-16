@@ -8,6 +8,8 @@ require('paq-nvim') {
     'folke/trouble.nvim';
     'kosayoda/nvim-lightbulb';
     'onsails/lspkind-nvim';
+    "jose-elias-alvarez/nvim-lsp-ts-utils";
+    "jose-elias-alvarez/null-ls.nvim";
 
     -- fuzzy finder
     'nvim-lua/popup.nvim';
