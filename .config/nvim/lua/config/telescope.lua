@@ -1,8 +1,6 @@
-local trouble = require("trouble.providers.telescope")
 local telescope = require("telescope")
 
 telescope.setup({
-	mappings = { i = { ["<c-t>"] = trouble.open_with_trouble } },
 	defaults = {
 		vimgrep_arguments = {
 			"rg",

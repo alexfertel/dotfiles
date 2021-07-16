@@ -3,9 +3,7 @@ require("paq-nvim")({
 
 	-- lsp
 	"neovim/nvim-lspconfig",
-	"kabouzeid/nvim-lspinstall",
 	"hrsh7th/nvim-compe",
-	"folke/trouble.nvim",
 	"kosayoda/nvim-lightbulb",
 	"onsails/lspkind-nvim",
 	"jose-elias-alvarez/nvim-lsp-ts-utils",
@@ -20,10 +18,6 @@ require("paq-nvim")({
 	"nvim-treesitter/nvim-treesitter",
 	"cespare/vim-toml",
 	"folke/lua-dev.nvim",
-	-- 'HerringtonDarkholme/yats.vim';
-	-- 'pangloss/vim-javascript';
-	-- 'yuezk/vim-js';
-	-- 'maxmellon/vim-jsx-pretty';
 
 	-- ui
 	"kyazdani42/nvim-web-devicons",
@@ -50,16 +44,15 @@ require("paq-nvim")({
 	"junegunn/goyo.vim",
 	"junegunn/limelight.vim",
 	"APZelos/blamer.nvim",
-	"justinmk/vim-sneak",
+	"ggandor/lightspeed.nvim",
 	"lewis6991/gitsigns.nvim",
 	"folke/which-key.nvim",
 	"norcalli/nvim-colorizer.lua",
 	"vim-test/vim-test",
 	"windwp/nvim-autopairs",
-	-- 'L3MON4D3/LuaSnip';
+	"simrat39/rust-tools.nvim",
 	"lukas-reineke/indent-blankline.nvim",
 	"andymass/vim-matchup",
-	"RRethy/vim-illuminate",
 
 	-- Additional powerful text object for vim, this plugin should be studied
 	-- carefully to use its full power
@@ -67,9 +60,6 @@ require("paq-nvim")({
 
 	-- Highlight URLs inside vim
 	"itchyny/vim-highlighturl",
-
-	-- Show current search term in different color
-	-- 'PeterRincker/vim-searchlight';
 
 	-- Support for latex files
 	{ "lervag/vimtex", opt = true },

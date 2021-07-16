@@ -1,4 +1,5 @@
-require("lspkind")
+require("lsp.lspkind")
+require("lsp.rust-tools")
 
 local lspconfig = require("lspconfig")
 local util = require("util")
@@ -79,7 +80,6 @@ local servers = {
 	vimls = {},
 	tailwindcss = {},
 	diagnosticls = diagnosticls_config,
-	rust_analyzer = {},
 }
 
 local opts = { noremap = true, silent = true }

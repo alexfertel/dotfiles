@@ -130,13 +130,5 @@ util.inoremap("<c-e>", "compe#close('<C-e>')", { silent = true, expr = true })
 util.inoremap("<c-f>", "compe#scroll({ 'delta': +4 })", { silent = true, expr = true })
 util.inoremap("<c-d>", "compe#scroll({ 'delta': -4 })", { silent = true, expr = true })
 
--- folke/trouble.nvim related mappings
-util.nnoremap("<leader>xx", "<cmd>TroubleToggle<cr>")
-util.nnoremap("<leader>xw", "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>")
-util.nnoremap("<leader>xd", "<cmd>TroubleToggle lsp_document_diagnostics<cr>")
-util.nnoremap("<leader>xq", "<cmd>TroubleToggle quickfix<cr>")
-util.nnoremap("<leader>xl", "<cmd>TroubleToggle loclist<cr>")
-util.nnoremap("gR", "<cmd>TroubleToggle lsp_references<cr>")
-
 -- copy whole file content
-util.nnoremap("<C-a>", [[ <Cmd> %y+<CR>]], { silent = true })
+util.nnoremap("ya", [[ <Cmd> %y+<CR>]], { silent = true })

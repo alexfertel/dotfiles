@@ -6,7 +6,6 @@ vim.g.indent_blankline_filetype_exclude = {
 	"packer",
 	"neogitstatus",
 	"NvimTree",
-	"Trouble",
 }
 vim.g.indent_blankline_char = "¦"
 vim.g.indent_blankline_use_treesitter = true
