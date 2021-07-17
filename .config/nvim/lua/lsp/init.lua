@@ -13,47 +13,6 @@ local function on_attach(client, bufnr)
 	end
 end
 
-local diagnosticls_config = {
-	filetypes = { "javascript", "typescript" },
-	root_dir = function(fname)
-		return lspconfig.util.root_pattern("tsconfig.json")(fname) or lspconfig.util.root_pattern(".eslintrc.js")(fname)
-	end,
-	init_options = {
-		linters = {
-			eslint = {
-				command = "./node_modules/.bin/eslint",
-				rootPatterns = { ".eslintrc.js", ".git" },
-				debounce = 100,
-				args = {
-					"--stdin",
-					"--stdin-filename",
-					"%filepath",
-					"--format",
-					"json",
-				},
-				sourceName = "eslint",
-				parseJson = {
-					errorsRoot = "[0].messages",
-					line = "line",
-					column = "column",
-					endLine = "endLine",
-					endColumn = "endColumn",
-					message = "[eslint] ${message} [${ruleId}]",
-					security = "severity",
-				},
-				securities = {
-					[2] = "error",
-					[1] = "warning",
-				},
-			},
-		},
-		filetypes = {
-			javascript = "eslint",
-			typescript = "eslint",
-		},
-	},
-}
-
 local lua_cmd = {
 	"/home/alex/alex/software/lsps/lua-language-server/bin/Linux/lua-language-server",
 	"-E",
@@ -61,7 +20,6 @@ local lua_cmd = {
 	"LANG=en",
 	"/home/alex/alex/software/lsps/lua-language-server/main.lua",
 }
--- lua_cmd = { "lua-language-server" }
 
 local servers = {
 	pyright = {},
@@ -78,7 +36,7 @@ local servers = {
 	efm = require("lsp.efm").config,
 	vimls = {},
 	tailwindcss = {},
-	diagnosticls = diagnosticls_config,
+	-- diagnosticls = require("lsp.diagnosticls"),
 }
 
 local opts = { noremap = true, silent = true }
@@ -118,6 +76,65 @@ for server, config in pairs(servers) do
 		util.error(server .. ": cmd not found: " .. vim.inspect(cfg.cmd))
 	end
 end
+
+-- This may be uncommented in the future. I haven't found a way to
+-- get support for autoimports, which I love.
+--
+-- require("null-ls").setup({})
+-- lspconfig.tsserver.setup({
+-- 	on_attach = function(client, bufnr)
+-- 		-- disable tsserver formatting if you plan on formatting via null-ls
+-- 		client.resolved_capabilities.document_formatting = false
+
+-- 		local ts = require("nvim-lsp-ts-utils")
+-- 		vim.lsp.handlers["textDocument/codeAction"] = ts.code_action_handler
+
+-- 		-- defaults
+-- 		ts.setup({
+-- 			debug = false,
+-- 			disable_commands = false,
+-- 			enable_import_on_completion = true,
+
+-- 			-- import all
+-- 			import_all_timeout = 5000, -- ms
+-- 			import_all_priorities = {
+-- 				buffers = 4, -- loaded buffer names
+-- 				buffer_content = 3, -- loaded buffer content
+-- 				local_files = 2, -- git files or files with relative path markers
+-- 				same_file = 1, -- add to existing import statement
+-- 			},
+-- 			import_all_scan_buffers = 100,
+-- 			import_all_select_source = false,
+
+-- 			-- eslint
+-- 			eslint_enable_code_actions = true,
+-- 			eslint_enable_disable_comments = true,
+-- 			eslint_bin = "eslint_d",
+-- 			eslint_config_fallback = nil,
+-- 			eslint_enable_diagnostics = true,
+
+-- 			-- formatting
+-- 			enable_formatting = true,
+-- 			formatter = "prettier",
+-- 			formatter_config_fallback = nil,
+
+-- 			-- update imports on file move
+-- 			update_imports_on_move = true,
+-- 			require_confirmation_on_move = false,
+-- 			watch_dir = nil,
+-- 		})
+
+-- 		-- required to fix code action ranges
+-- 		ts.setup_client(client)
+
+-- 		-- no default maps, so you may want to define some here
+-- 		local options = { silent = true }
+-- 		vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", options)
+-- 		vim.api.nvim_buf_set_keymap(bufnr, "n", "qq", ":TSLspFixCurrent<CR>", options)
+-- 		vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", options)
+-- 		vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", options)
+-- 	end,
+-- })
 
 vim.fn.sign_define("LspDiagnosticsSignError", { text = "", numhl = "LspDiagnosticsDefaultError" })
 vim.fn.sign_define("LspDiagnosticsSignWarning", { text = "", numhl = "LspDiagnosticsDefaultWarning" })

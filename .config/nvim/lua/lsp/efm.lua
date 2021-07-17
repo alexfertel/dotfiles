@@ -1,10 +1,8 @@
 local M = {}
 
--- local luafmt = { formatCommand = "lua-format -i", formatStdin = true }
-
 local stylua = { formatCommand = "stylua -", formatStdin = true }
 local selene = {
-	lintComman = "selene --display-style quiet -",
+	lintCommand = "selene --display-style quiet -",
 	lintIgnoreExitCode = true,
 	lintStdin = true,
 	lintFormats = { "%f:%l:%c: %tarning%m", "%f:%l:%c: %tarning%m" },
@@ -44,7 +42,7 @@ local eslintPrettier = { prettierLocal, eslint }
 M.config = {
 	init_options = { documentFormatting = true },
 	settings = {
-		rootMarkers = { "package.json", ".git" },
+		rootMarkers = { "package.json", ".git", "stylua.toml" },
 		languages = {
 			lua = { selene, stylua },
 			typescript = { prettierLocal },
