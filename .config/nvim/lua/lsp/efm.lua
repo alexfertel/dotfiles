@@ -1,12 +1,12 @@
 local M = {}
 
 local stylua = { formatCommand = "stylua -", formatStdin = true }
-local selene = {
-	lintCommand = "selene --display-style quiet -",
-	lintIgnoreExitCode = true,
-	lintStdin = true,
-	lintFormats = { "%f:%l:%c: %tarning%m", "%f:%l:%c: %tarning%m" },
-}
+-- local selene = {
+-- 	lintCommand = "selene --display-style quiet -",
+-- 	lintIgnoreExitCode = true,
+-- 	lintStdin = true,
+-- 	lintFormats = { "%f:%l:%c: %tarning%m", "%f:%l:%c: %tarning%m" },
+-- }
 
 local prettierLocal = {
 	formatCommand = "./node_modules/.bin/prettier --stdin --stdin-filepath ${INPUT}",
@@ -18,12 +18,12 @@ local prettierGlobal = {
 	formatStdin = true,
 }
 
-local eslint = {
-	lintCommand = "eslint_d -f visualstudio --stdin --stdin-filename ${INPUT}",
-	lintIgnoreExitCode = true,
-	lintStdin = true,
-	lintFormats = { "%f(%l,%c): %tarning %m", "%f(%l,%c): %trror %m" },
-}
+-- local eslint = {
+-- 	lintCommand = "eslint_d -f visualstudio --stdin --stdin-filename ${INPUT}",
+-- 	lintIgnoreExitCode = true,
+-- 	lintStdin = true,
+-- 	lintFormats = { "%f(%l,%c): %tarning %m", "%f(%l,%c): %trror %m" },
+-- }
 
 local shellcheck = {
 	lintCommand = "shellcheck -f gcc -x -",
@@ -37,20 +37,21 @@ local markdownlint = {
 	lintFormats = { "%f:%l:%c %m" },
 }
 
-local eslintPrettier = { prettierLocal, eslint }
+-- local eslintPrettier = { prettierLocal, eslint }
 
 M.config = {
 	init_options = { documentFormatting = true },
 	settings = {
 		rootMarkers = { "package.json", ".git", "stylua.toml" },
 		languages = {
-			lua = { selene, stylua },
-			typescript = { prettierLocal },
-			javascript = eslintPrettier,
-			typescriptreact = eslintPrettier,
-			javascriptreact = eslintPrettier,
-			["typescript.tsx"] = eslintPrettier,
-			["javascript.tsx"] = eslintPrettier,
+			-- lua = { selene, stylua },
+			lua = { stylua },
+			-- typescript = { prettierLocal },
+			-- javascript = eslintPrettier,
+			-- typescriptreact = eslintPrettier,
+			-- javascriptreact = eslintPrettier,
+			-- ["typescript.tsx"] = eslintPrettier,
+			-- ["javascript.tsx"] = eslintPrettier,
 			yaml = { prettierLocal },
 			json = { prettierGlobal },
 			html = { prettierLocal },

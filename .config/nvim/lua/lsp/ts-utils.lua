@@ -4,7 +4,7 @@ return {
 		-- vim.lsp.handlers["textDocument/codeAction"] = ts.code_action_handler
 		ts.setup({
 			disable_commands = false,
-			enable_import_on_completion = false,
+			enable_import_on_completion = true,
 			import_on_completion_timeout = 5000,
 			eslint_bin = "eslint_d", -- use eslint_d if possible!
 			eslint_enable_diagnostics = true,

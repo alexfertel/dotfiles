@@ -42,12 +42,12 @@ telescope.setup({
 		qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
 		buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
 	},
-	-- extensions = {
-	--       fzy_native = {
-	--           override_generic_sorter = false,
-	--           override_file_sorter = true,
-	--       }
-	--   }
+	extensions = {
+		fzy_native = {
+			override_generic_sorter = false,
+			override_file_sorter = true,
+		},
+	},
 })
 
--- telescope.load_extension('fzy_native')
+telescope.load_extension("fzy_native")

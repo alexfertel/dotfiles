@@ -1,4 +1,4 @@
--- Disbale unnecessary match stuff
+-- Disable unnecessary match stuff
 vim.g.loaded_matchit = 1
 vim.g.loaded_matchparen = 1
 

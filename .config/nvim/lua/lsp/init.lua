@@ -7,9 +7,30 @@ local util = require("util")
 local function on_attach(client, bufnr)
 	require("lsp.formatting").setup(client, bufnr)
 
+	local buf_map = vim.api.nvim_buf_set_keymap
+
+	local opts = { noremap = true, silent = true }
+	buf_map(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+	buf_map(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+	buf_map(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+	buf_map(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+	buf_map(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+	buf_map(bufnr, "n", "<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
+	buf_map(bufnr, "n", "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
+	buf_map(bufnr, "n", "<space>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", opts)
+	buf_map(bufnr, "n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
+	buf_map(bufnr, "n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+	buf_map(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+	buf_map(bufnr, "n", "<space>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", opts)
+	buf_map(bufnr, "n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
+	buf_map(bufnr, "n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
+	buf_map(bufnr, "n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
+	buf_map(bufnr, "n", "<space>ff", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+
 	-- TypeScript specific stuff
 	if client.name == "typescript" or client.name == "tsserver" then
-		require("lsp.ts-utils").setup(client)
+		client.resolved_capabilities.document_formatting = false
+		-- require("lsp.ts-utils").setup(client)
 	end
 end
 
@@ -35,27 +56,9 @@ local servers = {
 	}),
 	efm = require("lsp.efm").config,
 	vimls = {},
-	tailwindcss = {},
-	-- diagnosticls = require("lsp.diagnosticls"),
+	-- tailwindcss = {},
+	diagnosticls = require("lsp.diagnosticls"),
 }
-
-local opts = { noremap = true, silent = true }
-util.nmap("gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-util.nmap("gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
-util.nmap("K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
-util.nmap("gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-util.nmap("<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-util.nmap("<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
-util.nmap("<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
-util.nmap("<space>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", opts)
-util.nmap("<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
-util.nmap("<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-util.nmap("gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-util.nmap("<space>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", opts)
-util.nmap("[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
-util.nmap("]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
-util.nmap("<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
-util.nmap("<space>ff", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true

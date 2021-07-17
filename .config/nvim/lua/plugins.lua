@@ -1,6 +1,24 @@
-require("paq-nvim")({
-	"savq/paq-nvim",
+local function plug(path, config)
+	vim.validate({
+		path = { path, "s" },
+		config = { config, vim.tbl_islist, "an array of packages" },
+	})
+	vim.fn["plug#begin"](path)
+	for _, v in ipairs(config) do
+		if type(v) == "string" then
+			vim.fn["plug#"](v)
+		elseif type(v) == "table" then
+			local p = v[1]
+			assert(p, "Must specify package as first index.")
+			v[1] = nil
+			vim.fn["plug#"](p, v)
+			v[1] = p
+		end
+	end
+	vim.fn["plug#end"]()
+end
 
+plug("~/.local/share/nvim/plugged", {
 	-- lsp
 	"neovim/nvim-lspconfig",
 	"hrsh7th/nvim-compe",
@@ -8,12 +26,14 @@ require("paq-nvim")({
 	"onsails/lspkind-nvim",
 	"jose-elias-alvarez/nvim-lsp-ts-utils",
 	"jose-elias-alvarez/null-ls.nvim",
+	"JoosepAlviste/nvim-ts-context-commentstring",
+	"windwp/nvim-ts-autotag",
 
 	-- fuzzy finder
 	"nvim-lua/popup.nvim",
 	"nvim-lua/plenary.nvim",
 	"nvim-telescope/telescope.nvim",
-	-- { 'nvim-telescope/telescope-fzy-native.nvim', run='git submodule update --init --recursive' };
+	"nvim-telescope/telescope-fzy-native.nvim",
 
 	-- syntax
 	"nvim-treesitter/nvim-treesitter",
@@ -27,8 +47,6 @@ require("paq-nvim")({
 	"kyazdani42/nvim-tree.lua",
 	"akinsho/nvim-bufferline.lua",
 	"hoob3rt/lualine.nvim",
-	-- "vim-airline/vim-airline",
-	-- "vim-airline/vim-airline-themes",
 
 	-- themes
 	"folke/tokyonight.nvim",
@@ -59,6 +77,10 @@ require("paq-nvim")({
 	"romainl/vim-qf",
 	"brooth/far.vim",
 	"rhysd/git-messenger.vim",
+
+	-- Snippets
+	"hrsh7th/vim-vsnip",
+	"hrsh7th/vim-vsnip-integ",
 
 	-- Additional powerful text object for vim, this plugin should be studied
 	-- carefully to use its full power

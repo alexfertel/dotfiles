@@ -20,7 +20,17 @@ function M.format()
 end
 
 function M.setup(client, buf)
-	client.resolved_capabilities.document_formatting = client.name == "efm"
+	local ft = vim.api.nvim_buf_get_option(buf, "filetype")
+	local efm_formatted = require("lsp.efm").formatted_languages
+
+	local enable = false
+	if efm_formatted[ft] then
+		enable = client.name == "efm"
+	else
+		enable = not (client.name == "efm" or client.name == "null-ls")
+	end
+
+	client.resolved_capabilities.document_formatting = enable
 	-- format on save
 	if client.resolved_capabilities.document_formatting then
 		vim.cmd([[
