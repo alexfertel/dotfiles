@@ -25,9 +25,6 @@ require("compe").setup({
 		calc = true,
 		nvim_lsp = true,
 		nvim_lua = true,
-		vsnip = true,
-		ultisnips = true,
-		luasnip = true,
 	},
 })
 
@@ -44,8 +41,6 @@ end
 _G.tab_complete = function()
 	if vim.fn.pumvisible() == 1 then
 		return t("<C-n>")
-	elseif require("luasnip").expand_or_jumpable() then
-		return t("<Plug>luasnip-expand-or-jump")
 	elseif check_back_space() then
 		return t("<Tab>")
 	else
@@ -55,8 +50,6 @@ end
 _G.s_tab_complete = function()
 	if vim.fn.pumvisible() == 1 then
 		return t("<C-p>")
-	elseif require("luasnip").jumpable(-1) then
-		return t("<Plug>luasnip-jump-prev")
 	else
 		-- If <S-Tab> is not working in your terminal, change it to <C-h>
 		return t("<S-Tab>")

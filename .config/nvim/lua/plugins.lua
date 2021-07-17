@@ -25,8 +25,9 @@ require("paq-nvim")({
 	"psliwka/vim-smoothie",
 	"kyazdani42/nvim-tree.lua",
 	"akinsho/nvim-bufferline.lua",
-	"vim-airline/vim-airline",
-	"vim-airline/vim-airline-themes",
+	"hoob3rt/lualine.nvim",
+	-- "vim-airline/vim-airline",
+	-- "vim-airline/vim-airline-themes",
 
 	-- themes
 	"folke/tokyonight.nvim",
@@ -53,6 +54,10 @@ require("paq-nvim")({
 	"simrat39/rust-tools.nvim",
 	"lukas-reineke/indent-blankline.nvim",
 	"andymass/vim-matchup",
+	"dstein64/vim-startuptime",
+	"romainl/vim-qf",
+	"brooth/far.vim",
+	"rhysd/git-messenger.vim",
 
 	-- Additional powerful text object for vim, this plugin should be studied
 	-- carefully to use its full power

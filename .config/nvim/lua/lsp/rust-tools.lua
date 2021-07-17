@@ -39,13 +39,13 @@ local opts = {
 			max_len_align = false,
 
 			-- padding from the left if max_len_align is true
-			max_len_align_padding = 1,
+			max_len_align_padding = 4,
 
 			-- whether to align to the extreme right or not
 			right_align = false,
 
 			-- padding from the right if right_align is true
-			right_align_padding = 7,
+			right_align_padding = 9,
 		},
 
 		hover_actions = {

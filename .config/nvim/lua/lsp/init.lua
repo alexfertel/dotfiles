@@ -6,7 +6,6 @@ local util = require("util")
 
 local function on_attach(client, bufnr)
 	require("lsp.formatting").setup(client, bufnr)
-	require("lsp.highlighting").setup(client)
 
 	-- TypeScript specific stuff
 	if client.name == "typescript" or client.name == "tsserver" then
