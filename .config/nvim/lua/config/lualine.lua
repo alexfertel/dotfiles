@@ -138,7 +138,6 @@ local mode_colors = {
 }
 
 ins_left({
-	-- mode component
 	function()
 		local mode = vim.fn.mode()
 		vim.api.nvim_command("hi! LualineMode guifg=" .. colors.bg .. " guibg=" .. mode_colors[mode])
@@ -183,13 +182,14 @@ local function lsp_progress()
 	local messages = vim.lsp.util.get_progress_messages()
 	if #messages == 0 then
 		local msg = "No Active Lsp"
-		local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-		local icon = devicons.get_icon(vim.fn.bufname(), buf_ft)
+
 		local clients = vim.lsp.get_active_clients()
 		if next(clients) == nil then
 			return msg
 		end
 		msg = ""
+
+		local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
 		for _, client in ipairs(clients) do
 			local filetypes = client.config.filetypes
 			if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
@@ -201,10 +201,13 @@ local function lsp_progress()
 			end
 		end
 
-		if icon ~= nil then
-			return icon .. " " .. msg
-		else
+		local bufname = vim.fn.bufname()
+		local extension = bufname:match("[^.]+$")
+		local icon = devicons.get_icon(bufname, extension)
+		if icon == nil then
 			return msg
+		else
+			return icon .. " " .. msg
 		end
 	end
 	local status = {}
