@@ -3,24 +3,6 @@
 
 local devicons = require("nvim-web-devicons")
 
-local function clock()
-	return " " .. os.date("%H:%M")
-end
-
-local colors = {
-	bg = "#202328",
-	fg = "#CBCCC6",
-	yellow = "#ECBE7B",
-	cyan = "#008080",
-	darkblue = "#081633",
-	green = "#98be65",
-	orange = "#FF8800",
-	violet = "#a9a1e1",
-	magenta = "#c678dd",
-	blue = "#51afef",
-	red = "#ec5f67",
-}
-
 local conditions = {
 	buffer_not_empty = function()
 		return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
@@ -45,8 +27,8 @@ local config = {
 			-- We are going to use lualine_c an lualine_x as left and
 			-- right section. Both are highlighted by c theme .  So we
 			-- are just setting default looks o statusline
-			normal = { c = { fg = colors.fg, bg = colors.bg } },
-			inactive = { c = { fg = colors.fg, bg = colors.bg } },
+			normal = { c = { fg = Colors.fg, bg = Colors.bg } },
+			inactive = { c = { fg = Colors.fg, bg = Colors.bg } },
 		},
 	},
 	sections = {
@@ -115,32 +97,34 @@ local mode_names = {
 }
 
 local mode_colors = {
-	n = colors.red,
-	i = colors.green,
-	v = colors.blue,
-	[""] = colors.blue,
-	V = colors.blue,
-	c = colors.magenta,
-	no = colors.red,
-	s = colors.orange,
-	S = colors.orange,
-	[""] = colors.orange,
-	ic = colors.yellow,
-	R = colors.violet,
-	Rv = colors.violet,
-	cv = colors.red,
-	ce = colors.red,
-	r = colors.cyan,
-	rm = colors.cyan,
-	["r?"] = colors.cyan,
-	["!"] = colors.red,
-	t = colors.red,
+	n = Colors.red,
+	i = Colors.green,
+	v = Colors.blue,
+	[""] = Colors.blue,
+	V = Colors.blue,
+	c = Colors.magenta,
+	no = Colors.red,
+	s = Colors.orange,
+	S = Colors.orange,
+	[""] = Colors.orange,
+	ic = Colors.yellow,
+	R = Colors.violet,
+	Rv = Colors.violet,
+	cv = Colors.red,
+	ce = Colors.red,
+	r = Colors.cyan,
+	rm = Colors.cyan,
+	["r?"] = Colors.cyan,
+	["!"] = Colors.red,
+	t = Colors.red,
 }
 
 ins_left({
 	function()
 		local mode = vim.fn.mode()
-		vim.api.nvim_command("hi! LualineMode guifg=" .. colors.bg .. " guibg=" .. mode_colors[mode])
+		vim.api.nvim_command(
+			"hi! LualineMode cterm=bold gui=bold guifg=" .. Colors.bg .. " guibg=" .. mode_colors[mode]
+		)
 		return " " .. mode_names[mode]
 	end,
 	color = "LualineMode",
@@ -152,23 +136,23 @@ ins_left({
 	condition = conditions.buffer_not_empty,
 	file_status = true,
 	path = 1,
-	color = { fg = colors.magenta, gui = "bold" },
+	color = { fg = Colors.magenta, gui = "bold" },
 })
 
 ins_left({
 	"branch",
 	icon = "",
 	condition = conditions.check_git_workspace,
-	color = { fg = colors.violet, gui = "bold" },
+	color = { fg = Colors.orange, gui = "bold" },
 })
 
 ins_left({
 	"diagnostics",
 	sources = { "nvim_lsp" },
 	symbols = { error = " ", warn = " ", info = " " },
-	color_error = colors.red,
-	color_warn = colors.yellow,
-	color_info = colors.cyan,
+	color_error = Colors.red,
+	color_warn = Colors.yellow,
+	color_info = Colors.cyan,
 })
 
 -- Insert mid section. You can make any number of sections in neovim :)
@@ -178,6 +162,7 @@ ins_left({
 		return "%="
 	end,
 })
+
 local function lsp_progress()
 	local messages = vim.lsp.util.get_progress_messages()
 	if #messages == 0 then
@@ -224,44 +209,46 @@ vim.cmd([[autocmd User LspProgressUpdate let &ro = &ro]])
 
 ins_left({
 	lsp_progress,
-	color = { fg = colors.orange, gui = "bold" },
+	color = { fg = Colors.blue, gui = "bold" },
 })
 
-ins_right({
-	"fileformat",
-	upper = true,
-	icons_enabled = true,
-	color = { fg = colors.green, gui = "bold" },
-})
+ins_right({ "location", color = { fg = Colors.blue }, upper = true })
 
-ins_right({ "location", icon = "並", color = { fg = colors.blue } })
-
-ins_right({ "progress", color = { fg = colors.violet, gui = "bold" } })
+ins_right({ "progress", color = { fg = Colors.violet, gui = "bold" } })
 
 ins_right({
 	"diff",
 	-- Is it me or the symbol for modified is really weird
 	symbols = { added = "+", modified = "~", removed = "-" },
-	color_added = colors.green,
-	color_modified = colors.orange,
-	color_removed = colors.red,
+	color_added = Colors.green,
+	color_modified = Colors.orange,
+	color_removed = Colors.red,
 	condition = conditions.hide_in_width,
 })
+
+local function filetype()
+	return vim.api.nvim_buf_get_option(0, "filetype")
+end
+
+ins_right({
+	filetype,
+	color = { fg = Colors.bg, bg = Colors.blue },
+})
+
+ins_right({
+	"fileformat",
+	icons_enabled = false,
+	color = { fg = Colors.bg, bg = Colors.violet, gui = "bold" },
+})
+
+local function clock()
+	return " " .. os.date("%H:%M")
+end
 
 ins_right({
 	clock,
-	color = { fg = colors.yellow },
+	color = { fg = Colors.bg, bg = Colors.yellow },
 	condition = conditions.hide_in_width,
-})
-
-ins_right({
-	function()
-		local mode = vim.fn.mode()
-		vim.api.nvim_command("hi! LualineEnd guifg=" .. colors.bg .. " guibg=" .. mode_colors[mode])
-		return "▊"
-	end,
-	color = "LualineEnd", -- Sets highlighting of component
-	right_padding = 0,
 })
 
 require("lualine").setup(config)
