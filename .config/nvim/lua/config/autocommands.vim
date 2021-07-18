@@ -1,4 +1,3 @@
-vim.cmd([[
 " Sometimes syntax highlighting for these files is broken
 " especially for very large files, so just do it every time
 " we open these kind of files.
@@ -20,4 +19,3 @@ autocmd FileType markdown setlocal spell
 " Enabling Limelight to be tied to Goyo
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
-]])

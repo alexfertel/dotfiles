@@ -4,12 +4,14 @@ require("config.matchup")
 require("config.misc")
 require("config.mappings")
 
+vim.cmd('source $MYNVIMCONFIG/lua/config/coc.vim')
+vim.cmd('source $MYNVIMCONFIG/lua/config/autocommands.vim')
+
 -- These come after
 require("config.treesitter")
-require("config.compe")
-require("config.lightbulb")
+-- require("config.compe")
+-- require("config.lightbulb")
 require("config.lualine")
-require("config.autocommands")
 require("config.gitsigns")
 require("config.blankline")
 require("config.nvimtree")

@@ -99,7 +99,7 @@ vim.opt.foldcolumn = "1"
 vim.opt.numberwidth = 4
 vim.opt.showcmd = true -- Shows entered commands
 
-vim.cmd("highlight link CompeDocumentation NormalFloat")
+-- vim.cmd("highlight link CompeDocumentation NormalFloat")
 
 local fences = {
 	"lua",

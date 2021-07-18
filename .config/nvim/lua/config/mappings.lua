@@ -116,21 +116,21 @@ util.tnoremap("<C-v><Esc>", "<Esc>")
 util.nnoremap("<leader>go", ":<C-u>Goyo 100+8<CR>")
 
 -- compe config for nvim-autopairs
-util.inoremap("<c-Space>", "compe#complete()", { silent = true, expr = true })
-util.inoremap("<c-e>", "compe#close('<C-e>')", { silent = true, expr = true })
-util.inoremap("<c-f>", "compe#scroll({ 'delta': +4 })", { silent = true, expr = true })
-util.inoremap("<c-d>", "compe#scroll({ 'delta': -4 })", { silent = true, expr = true })
+-- util.inoremap("<c-Space>", "compe#complete()", { silent = true, expr = true })
+-- util.inoremap("<c-e>", "compe#close('<C-e>')", { silent = true, expr = true })
+-- util.inoremap("<c-f>", "compe#scroll({ 'delta': +4 })", { silent = true, expr = true })
+-- util.inoremap("<c-d>", "compe#scroll({ 'delta': -4 })", { silent = true, expr = true })
 
-util.imap("<Tab>", "v:lua.tab_complete()", { expr = true })
-util.imap("<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
-util.smap("<Tab>", "v:lua.tab_complete()", { expr = true })
-util.smap("<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
+-- util.imap("<Tab>", "v:lua.tab_complete()", { expr = true })
+-- util.imap("<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
+-- util.smap("<Tab>", "v:lua.tab_complete()", { expr = true })
+-- util.smap("<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
 
-util.inoremap(
-	"<cr>",
-	[[compe#confirm(luaeval("require 'nvim-autopairs'.autopairs_cr()"))]],
-	{ silent = true, expr = true }
-)
+-- util.inoremap(
+-- 	"<cr>",
+-- 	[[compe#confirm(luaeval("require 'nvim-autopairs'.autopairs_cr()"))]],
+-- 	{ silent = true, expr = true }
+-- )
 
 -- copy whole file content
 util.nnoremap("ya", [[ <Cmd> %y+<CR>]], { silent = true })

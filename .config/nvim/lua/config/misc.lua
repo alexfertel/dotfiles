@@ -15,14 +15,6 @@ vim.cmd(
 	false
 )
 
--- Enable vim-airline extension for vim-lsp
-vim.g["airline#extensions#lsp#enabled"] = 1
--- Skip empty sections if there are nothing to show,
--- extracted from https://vi.stackexchange.com/a/9637/15292
-vim.g.airline_skip_empty_sections = 1
--- Speed up airline
-vim.g.airline_highlighting_cache = 1
-
 vim.g.startify_change_to_dir = 0
 
 vim.g.blamer_enabled = 1

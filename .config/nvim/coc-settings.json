@@ -1,0 +1,21 @@
+{
+  "eslint.lintTask.options": ["src"],
+  "suggest.noselect": false,
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "markdownlint.config": {
+    "line_length": false
+  },
+  "Lua.diagnostics.globals": ["vim"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "rust",
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "javascriptreact",
+    "typescript.tsx",
+    "python",
+    "graphql"
+  ]
+}

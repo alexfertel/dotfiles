@@ -20,14 +20,17 @@ end
 
 plug("~/.local/share/nvim/plugged", {
 	-- lsp
-	"neovim/nvim-lspconfig",
-	"hrsh7th/nvim-compe",
-	"kosayoda/nvim-lightbulb",
+	-- "neovim/nvim-lspconfig",
+	-- "hrsh7th/nvim-compe",
+	-- "kosayoda/nvim-lightbulb",
 	"onsails/lspkind-nvim",
-	"jose-elias-alvarez/nvim-lsp-ts-utils",
-	"jose-elias-alvarez/null-ls.nvim",
-	"JoosepAlviste/nvim-ts-context-commentstring",
-	"windwp/nvim-ts-autotag",
+	-- "jose-elias-alvarez/nvim-lsp-ts-utils",
+	-- "jose-elias-alvarez/null-ls.nvim",
+	-- "JoosepAlviste/nvim-ts-context-commentstring",
+	-- "windwp/nvim-ts-autotag",
+
+	-- coc
+	{ "neoclide/coc.nvim", branch = "release" },
 
 	-- fuzzy finder
 	"nvim-lua/popup.nvim",
@@ -79,8 +82,8 @@ plug("~/.local/share/nvim/plugged", {
 	"rhysd/git-messenger.vim",
 
 	-- Snippets
-	"hrsh7th/vim-vsnip",
-	"hrsh7th/vim-vsnip-integ",
+	-- "hrsh7th/vim-vsnip",
+	-- "hrsh7th/vim-vsnip-integ",
 
 	-- Additional powerful text object for vim, this plugin should be studied
 	-- carefully to use its full power
@@ -90,5 +93,5 @@ plug("~/.local/share/nvim/plugged", {
 	"itchyny/vim-highlighturl",
 
 	-- Support for latex files
-	{ "lervag/vimtex", opt = true },
+	-- { "lervag/vimtex", opt = true },
 })

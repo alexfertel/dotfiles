@@ -1,7 +1,7 @@
 -- This is a modified version of https://gist.github.com/hoob3rt/b200435a765ca18f09f83580a606b878
 -- merged with https://github.com/folke/dot
 
-local devicons = require("nvim-web-devicons")
+-- local devicons = require("nvim-web-devicons")
 
 local conditions = {
 	buffer_not_empty = function()
@@ -163,53 +163,63 @@ ins_left({
 	end,
 })
 
-local function lsp_progress()
-	local messages = vim.lsp.util.get_progress_messages()
-	if #messages == 0 then
-		local msg = "No Active Lsp"
+-- local function lsp_progress()
+-- 	local messages = vim.lsp.util.get_progress_messages()
+-- 	if #messages == 0 then
+-- 		local msg = "No Active Lsp"
 
-		local clients = vim.lsp.get_active_clients()
-		if next(clients) == nil then
-			return msg
-		end
-		msg = ""
+-- 		local clients = vim.lsp.get_active_clients()
+-- 		if next(clients) == nil then
+-- 			return msg
+-- 		end
+-- 		msg = ""
 
-		local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-		for _, client in ipairs(clients) do
-			local filetypes = client.config.filetypes
-			if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-				if msg == "" then
-					msg = client.name
-				else
-					msg = msg .. " | " .. client.name
-				end
-			end
-		end
+-- 		local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+-- 		for _, client in ipairs(clients) do
+-- 			local filetypes = client.config.filetypes
+-- 			if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+-- 				if msg == "" then
+-- 					msg = client.name
+-- 				else
+-- 					msg = msg .. " | " .. client.name
+-- 				end
+-- 			end
+-- 		end
 
-		local bufname = vim.fn.bufname()
-		local extension = bufname:match("[^.]+$")
-		local icon = devicons.get_icon(bufname, extension)
-		if icon == nil then
-			return msg
-		else
-			return icon .. " " .. msg
-		end
-	end
-	local status = {}
-	for _, msg in pairs(messages) do
-		table.insert(status, (msg.percentage or 0) .. "%% " .. (msg.title or ""))
-	end
-	local spinners = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
-	local ms = vim.loop.hrtime() / 1000000
-	local frame = math.floor(ms / 120) % #spinners
-	return table.concat(status, " | ") .. " " .. spinners[frame + 1]
-end
+-- 		local bufname = vim.fn.bufname()
+-- 		local extension = bufname:match("[^.]+$")
+-- 		local icon = devicons.get_icon(bufname, extension)
+-- 		if icon == nil then
+-- 			return msg
+-- 		else
+-- 			return icon .. " " .. msg
+-- 		end
+-- 	end
+-- 	local status = {}
+-- 	for _, msg in pairs(messages) do
+-- 		table.insert(status, (msg.percentage or 0) .. "%% " .. (msg.title or ""))
+-- 	end
+-- 	local spinners = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
+-- 	local ms = vim.loop.hrtime() / 1000000
+-- 	local frame = math.floor(ms / 120) % #spinners
+-- 	return table.concat(status, " | ") .. " " .. spinners[frame + 1]
+-- end
 
-vim.cmd([[autocmd User LspProgressUpdate let &ro = &ro]])
+-- vim.cmd([[autocmd User LspProgressUpdate let &ro = &ro]])
+
+-- ins_left({
+-- 	lsp_progress,
+-- 	color = { fg = Colors.blue, gui = "bold" },
+-- })
 
 ins_left({
-	lsp_progress,
-	color = { fg = Colors.blue, gui = "bold" },
+    'g:coc_status',
+    color = { fg = Colors.blue, gui = "bold" }
+})
+
+ins_left({
+    'b:coc_current_function',
+    color = { fg = Colors.blue, gui = "bold" }
 })
 
 ins_right({ "location", color = { fg = Colors.blue }, upper = true })
