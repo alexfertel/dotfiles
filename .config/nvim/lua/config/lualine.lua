@@ -141,18 +141,20 @@ ins_left({
 
 ins_left({
 	"branch",
-	icon = "",
+	-- icon = "",
 	condition = conditions.check_git_workspace,
 	color = { fg = Colors.orange, gui = "bold" },
 })
 
 ins_left({
 	"diagnostics",
-	sources = { "nvim_lsp" },
-	symbols = { error = " ", warn = " ", info = " " },
+	-- sources = { "nvim_lsp" },
+	sources = { "coc" },
+	symbols = { error = " ", warn = " ", info = " ", hint= " " },
 	color_error = Colors.red,
-	color_warn = Colors.yellow,
+	color_warn = Colors.orange,
 	color_info = Colors.cyan,
+	color_hint = Colors.blue,
 })
 
 -- Insert mid section. You can make any number of sections in neovim :)
@@ -212,23 +214,36 @@ ins_left({
 -- 	color = { fg = Colors.blue, gui = "bold" },
 -- })
 
-ins_left({
-    'g:coc_status',
-    color = { fg = Colors.blue, gui = "bold" }
-})
+local function coc_status()
+    local status = vim.g.coc_status
+    local enabled = vim.g.coc_service_initialized
+    if status ~= "" then
+        return status
+    elseif enabled == 1 then
+        return "Coc is running "
+    else
+        return ""
+    end
+end
 
 ins_left({
-    'b:coc_current_function',
+    coc_status,
     color = { fg = Colors.blue, gui = "bold" }
 })
 
 ins_right({ "location", color = { fg = Colors.blue }, upper = true })
 
-ins_right({ "progress", color = { fg = Colors.violet, gui = "bold" } })
+local function total_lines()
+    return vim.fn.line('$')
+end
+
+ins_right({ total_lines,
+    condition = conditions.buffer_not_empty, color = { fg = Colors.violet, gui = "bold" } })
+ins_right({ "progress", color = { fg = Colors.yellow, gui = "bold" } })
+
 
 ins_right({
 	"diff",
-	-- Is it me or the symbol for modified is really weird
 	symbols = { added = "+", modified = "~", removed = "-" },
 	color_added = Colors.green,
 	color_modified = Colors.orange,

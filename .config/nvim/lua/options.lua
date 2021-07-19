@@ -19,8 +19,10 @@ vim.opt.updatetime = 150
 -- Don't pass messages to |ins-completion-menu|.
 vim.opt.shortmess:append("c")
 
--- Display leading spaces and tabs
-vim.opt.listchars:append("lead:.")
+-- Display leading spaces as '·'
+-- dump(vim.opt.listchars)
+vim.opt.listchars:prepend("lead:·")
+-- dump(vim.opt.listchars)
 
 -- Always show the signcolumn, otherwise it would shift the text each time
 -- diagnostics appear/become resolved.
