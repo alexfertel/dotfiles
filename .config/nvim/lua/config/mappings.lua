@@ -132,5 +132,9 @@ util.nnoremap("<leader>go", ":<C-u>Goyo 100+8<CR>")
 -- 	{ silent = true, expr = true }
 -- )
 
--- copy whole file content
-util.nnoremap("ya", [[ <Cmd> %y+<CR>]], { silent = true })
+-- Copy whole file content
+util.nnoremap("ya", [[ <cmd> %y+<CR>]], { silent = true })
+
+-- Move lines up and down
+util.vnoremap("J", [[:m '>+1<CR>gv=gv]])
+util.vnoremap("K", [[:m '>-2<CR>gv=gv]])
