@@ -1,11 +1,11 @@
-require("lsp.lspkind")
---require("lsp.rust-tools")
+load("lsp.lspkind")
+--load("lsp.rust-tools")
 
---local lspconfig = require("lspconfig")
---local util = require("util")
+--local lspconfig = load("lspconfig")
+--local util = load("util")
 
 --local function on_attach(client, bufnr)
---	require("lsp.formatting").setup(client, bufnr)
+--	load("lsp.formatting").setup(client, bufnr)
 
 --	local buf_map = vim.api.nvim_buf_set_keymap
 
@@ -30,7 +30,7 @@ require("lsp.lspkind")
 --	-- TypeScript specific stuff
 --	if client.name == "typescript" or client.name == "tsserver" then
 --		client.resolved_capabilities.document_formatting = false
---		-- require("lsp.ts-utils").setup(client)
+--		-- load("lsp.ts-utils").setup(client)
 --	end
 --end
 
@@ -50,14 +50,14 @@ require("lsp.lspkind")
 --	jsonls = { cmd = { "vscode-json-languageserver", "--stdio" } },
 --	html = { cmd = { "html-languageserver", "--stdio" } },
 --	clangd = {},
---	sumneko_lua = require("lua-dev").setup({
+--	sumneko_lua = load("lua-dev").setup({
 --		library = { plugins = { "nvim-treesitter", "plenary.nvim", "telescope.nvim" } },
 --		lspconfig = { cmd = lua_cmd },
 --	}),
---	efm = require("lsp.efm").config,
+--	efm = load("lsp.efm").config,
 --	vimls = {},
 --	-- tailwindcss = {},
---	diagnosticls = require("lsp.diagnosticls"),
+--	diagnosticls = load("lsp.diagnosticls"),
 --}
 
 --local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -83,13 +83,13 @@ require("lsp.lspkind")
 ---- This may be uncommented in the future. I haven't found a way to
 ---- get support for autoimports, which I love.
 ----
----- require("null-ls").setup({})
+---- load("null-ls").setup({})
 ---- lspconfig.tsserver.setup({
 ---- 	on_attach = function(client, bufnr)
 ---- 		-- disable tsserver formatting if you plan on formatting via null-ls
 ---- 		client.resolved_capabilities.document_formatting = false
 
----- 		local ts = require("nvim-lsp-ts-utils")
+---- 		local ts = load("nvim-lsp-ts-utils")
 ---- 		vim.lsp.handlers["textDocument/codeAction"] = ts.code_action_handler
 
 ---- 		-- defaults
@@ -123,11 +123,11 @@ require("lsp.lspkind")
 
 ---- 			-- update imports on file move
 ---- 			update_imports_on_move = true,
----- 			require_confirmation_on_move = false,
+---- 			load_confirmation_on_move = false,
 ---- 			watch_dir = nil,
 ---- 		})
 
----- 		-- required to fix code action ranges
+---- 		-- loadd to fix code action ranges
 ---- 		ts.setup_client(client)
 
 ---- 		-- no default maps, so you may want to define some here

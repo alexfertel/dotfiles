@@ -1,7 +1,7 @@
--- local wk = require("which-key")
-local util = require("util")
+-- local wk = load("which-key")
+local util = load("util")
 
--- local presets = require("which-key.plugins.presets")
+-- local presets = load("which-key.plugins.presets")
 -- presets.objects["a("] = nil
 -- wk.setup({ show_help = false, triggers = "auto", plugins = { spelling = true }, key_labels = { ["<leader>"] = "SPC" } })
 
@@ -128,7 +128,7 @@ util.nnoremap("<leader>go", ":<C-u>Goyo 100+8<CR>")
 
 -- util.inoremap(
 -- 	"<cr>",
--- 	[[compe#confirm(luaeval("require 'nvim-autopairs'.autopairs_cr()"))]],
+-- 	[[compe#confirm(luaeval("load 'nvim-autopairs'.autopairs_cr()"))]],
 -- 	{ silent = true, expr = true }
 -- )
 

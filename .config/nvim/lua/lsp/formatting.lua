@@ -1,4 +1,4 @@
-local util = require("util")
+local util = load("util")
 
 local M = {}
 
@@ -21,7 +21,7 @@ end
 
 function M.setup(client, buf)
   local ft = vim.api.nvim_buf_get_option(buf, "filetype")
-  local efm_formatted = require("lsp.efm").formatted_languages
+  local efm_formatted = load("lsp.efm").formatted_languages
 
   local enable = false
   if efm_formatted[ft] then
@@ -36,7 +36,7 @@ function M.setup(client, buf)
     vim.cmd([[
       augroup LspFormat
         autocmd! * <buffer>
-        autocmd BufWritePre <buffer> lua require("lsp.formatting").format()
+        autocmd BufWritePre <buffer> lua load("lsp.formatting").format()
       augroup END
     ]])
   end

@@ -1,6 +1,5 @@
 require("util")
-require("options")
-
-require("plugins")
--- require("lsp.lspkind")
-require("config")
+load("options")
+load("plugins")
+-- load("lsp.lspkind")
+load("config")

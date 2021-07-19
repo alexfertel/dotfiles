@@ -14,15 +14,13 @@ vim.opt.cmdheight = 4
 
 -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 -- delays and poor user experience.
-vim.opt.updatetime = 150
+vim.opt.updatetime = 100
 
 -- Don't pass messages to |ins-completion-menu|.
 vim.opt.shortmess:append("c")
 
 -- Display leading spaces as '·'
--- dump(vim.opt.listchars)
 vim.opt.listchars:prepend("space:·")
--- dump(vim.opt.listchars)
 
 -- Always show the signcolumn, otherwise it would shift the text each time
 -- diagnostics appear/become resolved.

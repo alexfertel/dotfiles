@@ -1,5 +1,5 @@
 -- Showing defaults
-require("nvim-lightbulb").update_lightbulb({
+load("nvim-lightbulb").update_lightbulb({
   sign = {
     enabled = true,
     -- Priority of the gutter sign
@@ -41,4 +41,4 @@ require("nvim-lightbulb").update_lightbulb({
 
 -- Show available code actions using a bulb icon when holding the cursor
 -- in the current line
-vim.cmd([[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]])
+vim.cmd([[autocmd CursorHold,CursorHoldI * lua load'nvim-lightbulb'.update_lightbulb()]])
