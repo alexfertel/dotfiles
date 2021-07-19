@@ -17,26 +17,26 @@ vim.g.nvim_tree_lsp_diagnostics = 1 -- 0 by default, will show lsp diagnostics i
 vim.g.nvim_tree_special_files = { "README.md", "Makefile", "MAKEFILE" } -- List of filenames that gets highlighted with NvimTreeSpecialFile
 vim.g.nvim_tree_show_icons = { git = 1, folders = 1, folder_arrows = 1, files = 1 }
 vim.g.nvim_tree_icons = {
-	default = "",
-	symlink = "",
-	git = {
-		unstaged = "✗",
-		staged = "✓",
-		unmerged = "",
-		renamed = "➜",
-		untracked = "★",
-		deleted = "",
-		ignored = "◌",
-	},
-	folder = {
-		-- disable indent_markers option to get arrows working or if you want both arrows and indent then just add the arrow icons in front            ofthe default and opened folders below!
-		-- arrow_open = "",
-		-- arrow_closed = "",
-		default = "",
-		open = "",
-		empty = "", -- 
-		empty_open = "",
-		symlink = "",
-		symlink_open = "",
-	},
+  default = "",
+  symlink = "",
+  git = {
+    unstaged = "✗",
+    staged = "✓",
+    unmerged = "",
+    renamed = "➜",
+    untracked = "★",
+    deleted = "",
+    ignored = "◌",
+  },
+  folder = {
+    -- disable indent_markers option to get arrows working or if you want both arrows and indent then just add the arrow icons in front            ofthe default and opened folders below!
+    -- arrow_open = "",
+    -- arrow_closed = "",
+    default = "",
+    open = "",
+    empty = "", -- 
+    empty_open = "",
+    symlink = "",
+    symlink_open = "",
+  },
 }

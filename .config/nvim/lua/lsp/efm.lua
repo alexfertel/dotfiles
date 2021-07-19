@@ -9,13 +9,13 @@ local stylua = { formatCommand = "stylua -", formatStdin = true }
 -- }
 
 local prettierLocal = {
-	formatCommand = "./node_modules/.bin/prettier --stdin --stdin-filepath ${INPUT}",
-	formatStdin = true,
+  formatCommand = "./node_modules/.bin/prettier --stdin --stdin-filepath ${INPUT}",
+  formatStdin = true,
 }
 
 local prettierGlobal = {
-	formatCommand = "prettier --stdin --stdin-filepath ${INPUT}",
-	formatStdin = true,
+  formatCommand = "prettier --stdin --stdin-filepath ${INPUT}",
+  formatStdin = true,
 }
 
 -- local eslint = {
@@ -26,56 +26,56 @@ local prettierGlobal = {
 -- }
 
 local shellcheck = {
-	lintCommand = "shellcheck -f gcc -x -",
-	lintStdin = true,
-	lintFormats = { "%f=%l:%c: %trror: %m", "%f=%l:%c: %tarning: %m", "%f=%l:%c: %tote: %m" },
+  lintCommand = "shellcheck -f gcc -x -",
+  lintStdin = true,
+  lintFormats = { "%f=%l:%c: %trror: %m", "%f=%l:%c: %tarning: %m", "%f=%l:%c: %tote: %m" },
 }
 
 local markdownlint = {
-	lintCommand = "markdownlint -s",
-	lintStdin = true,
-	lintFormats = { "%f:%l:%c %m" },
+  lintCommand = "markdownlint -s",
+  lintStdin = true,
+  lintFormats = { "%f:%l:%c %m" },
 }
 
 -- local eslintPrettier = { prettierLocal, eslint }
 
 M.config = {
-	init_options = { documentFormatting = true },
-	settings = {
-		rootMarkers = { "package.json", ".git", "stylua.toml" },
-		languages = {
-			-- lua = { selene, stylua },
-			lua = { stylua },
-			-- typescript = { prettierLocal },
-			-- javascript = eslintPrettier,
-			-- typescriptreact = eslintPrettier,
-			-- javascriptreact = eslintPrettier,
-			-- ["typescript.tsx"] = eslintPrettier,
-			-- ["javascript.tsx"] = eslintPrettier,
-			yaml = { prettierLocal },
-			json = { prettierGlobal },
-			html = { prettierLocal },
-			scss = { prettierLocal },
-			css = { prettierLocal },
-			markdown = { prettierLocal, markdownlint },
-			sh = { shellcheck },
-		},
-	},
+  init_options = { documentFormatting = true },
+  settings = {
+    rootMarkers = { "package.json", ".git", "stylua.toml" },
+    languages = {
+      -- lua = { selene, stylua },
+      lua = { stylua },
+      -- typescript = { prettierLocal },
+      -- javascript = eslintPrettier,
+      -- typescriptreact = eslintPrettier,
+      -- javascriptreact = eslintPrettier,
+      -- ["typescript.tsx"] = eslintPrettier,
+      -- ["javascript.tsx"] = eslintPrettier,
+      yaml = { prettierLocal },
+      json = { prettierGlobal },
+      html = { prettierLocal },
+      scss = { prettierLocal },
+      css = { prettierLocal },
+      markdown = { prettierLocal, markdownlint },
+      sh = { shellcheck },
+    },
+  },
 }
 
 M.config.filetypes = {}
 for ft, _ in pairs(M.config.settings.languages) do
-	table.insert(M.config.filetypes, ft)
+  table.insert(M.config.filetypes, ft)
 end
 
 M.formatted_languages = {}
 
 for lang, tools in pairs(M.config.settings.languages) do
-	for _, tool in pairs(tools) do
-		if tool.formatCommand then
-			M.formatted_languages[lang] = true
-		end
-	end
+  for _, tool in pairs(tools) do
+    if tool.formatCommand then
+      M.formatted_languages[lang] = true
+    end
+  end
 end
 
 return M

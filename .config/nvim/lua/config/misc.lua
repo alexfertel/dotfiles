@@ -2,7 +2,7 @@ require("colorizer").setup()
 
 -- Makes * and # work on visual mode too.
 vim.cmd(
-	[[
+  [[
   function! g:VSetSearch(cmdtype)
     let temp = @s
     norm! gv--sy
@@ -12,7 +12,7 @@ vim.cmd(
   xnoremap * :<C-u>call g:VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
   xnoremap # :<C-u>call g:VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
 ]],
-	false
+  false
 )
 
 vim.g.startify_change_to_dir = 0

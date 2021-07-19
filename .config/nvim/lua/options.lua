@@ -21,7 +21,7 @@ vim.opt.shortmess:append("c")
 
 -- Display leading spaces as '·'
 -- dump(vim.opt.listchars)
-vim.opt.listchars:prepend("lead:·")
+vim.opt.listchars:prepend("space:·")
 -- dump(vim.opt.listchars)
 
 -- Always show the signcolumn, otherwise it would shift the text each time
@@ -104,16 +104,16 @@ vim.opt.showcmd = true -- Shows entered commands
 -- vim.cmd("highlight link CompeDocumentation NormalFloat")
 
 local fences = {
-	"lua",
-	"json",
-	"typescript",
-	"javascript",
-	"js=javascript",
-	"ts=typescript",
-	"shell=sh",
-	"python",
-	"sh",
-	"console=sh",
+  "lua",
+  "json",
+  "typescript",
+  "javascript",
+  "js=javascript",
+  "ts=typescript",
+  "shell=sh",
+  "python",
+  "sh",
+  "console=sh",
 }
 
 vim.g.markdown_fenced_languages = fences

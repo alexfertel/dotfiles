@@ -65,7 +65,7 @@ util.nnoremap("<M-w>", "<cmd>bd!<CR>", { silent = true })
 -- TODO: there's a bug with raw mode.  since we're using @/ to return an unescaped
 -- search string, vim's search highlight will be wrong.  Refactor plz.
 vim.cmd(
-	[[function! VisualStarSearchSet(cmdtype,...)
+  [[function! VisualStarSearchSet(cmdtype,...)
 let temp = @"
 normal! gvy
 if !a:0 || a:1 != 'raw'
@@ -77,7 +77,7 @@ let @/ = substitute(@/, '\~', '\\~', 'g')
 let @/ = substitute(@/, '\.', '\\.', 'g')
 let @" = temp
 endfunction]],
-	false
+  false
 )
 
 -- replace vim's built-in visual * and # behavior
@@ -86,13 +86,13 @@ util.xnoremap("#", ":<C-u>call VisualStarSearchSet('?')<CR>?<C-R>=@/<CR><CR>")
 
 -- recursively vimgrep for word under cursor or selection
 vim.cmd(
-	[[if maparg('<leader>*', 'n') == ''
+  [[if maparg('<leader>*', 'n') == ''
 nnoremap <leader>* :execute 'noautocmd vimgrep /\V' . substitute(escape(expand("<cword>"), '\'), '\n', '\\n', 'g') . '/ **'<CR>
 endif
 if maparg('<leader>*', 'v') == ''
 vnoremap <leader>* :<C-u>call VisualStarSearchSet('/')<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
 endif]],
-	false
+  false
 )
 
 -- vim-fugitive remaps
