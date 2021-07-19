@@ -58,7 +58,7 @@ util.nnoremap("<leader>be", "<cmd>BufferLineSortByExtension", { silent = true })
 util.nnoremap("<leader>bd", "<cmd>BufferLineSortByDirectory<CR>", { silent = true })
 
 -- Close buffer
-util.nnoremap("<M-w>", "<cmd>bd!<CR>", { silent = true })
+util.nnoremap("<M-w>", "<cmd>bp<bar>sp<bar>bn<bar>bd<CR>", { silent = true })
 
 -- makes * and # work on visual mode too.  global function so user mappings can call it.
 -- specifying 'raw' for the second argument prevents escaping the result for vimgrep
