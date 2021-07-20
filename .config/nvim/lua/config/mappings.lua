@@ -138,3 +138,10 @@ util.nnoremap("ya", [[ <cmd> %y+<CR>]], { silent = true })
 -- Move lines up and down
 util.vnoremap("J", [[:m '>+1<CR>gv=gv]])
 util.vnoremap("K", [[:m '>-2<CR>gv=gv]])
+
+-- restore the session for the current directory
+util.nmap("<leader>qs", [[<cmd>lua require("persistence").load()<cr>]])
+-- restore the last session
+util.nmap("<leader>ql", [[<cmd>lua require("persistence").load({ last=true })<cr>]])
+-- stop Persistence => session won't be saved on exit
+util.nmap("<leader>qd", [[<cmd>lua require("persistence").stop()<cr>]])

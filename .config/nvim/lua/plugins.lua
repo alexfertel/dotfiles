@@ -69,7 +69,6 @@ plug("~/.local/share/nvim/plugged", {
   "APZelos/blamer.nvim",
   "ggandor/lightspeed.nvim",
   "lewis6991/gitsigns.nvim",
-  "folke/which-key.nvim",
   "norcalli/nvim-colorizer.lua",
   "vim-test/vim-test",
   "windwp/nvim-autopairs",
@@ -80,6 +79,8 @@ plug("~/.local/share/nvim/plugged", {
   "romainl/vim-qf",
   "brooth/far.vim",
   "rhysd/git-messenger.vim",
+  "folke/which-key.nvim",
+  "folke/persistence.nvim",
 
   -- Snippets
   -- "hrsh7th/vim-vsnip",

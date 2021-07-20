@@ -3,8 +3,8 @@ _G.dump = function(...)
 end
 
 _G.load = function(file)
-    require("plenary.reload").reload_module(file, true)
-    return require(file)
+  require("plenary.reload").reload_module(file, true)
+  return require(file)
 end
 
 local M = {}
@@ -43,14 +43,14 @@ function M.map(mode, key, cmd, opt, defaults)
   return map(mode, key, cmd, opt, defaults)
 end
 
-local modes = {"n", "v", "x", "i", "o", "t", "s"}
+local modes = { "n", "v", "x", "i", "o", "t", "s" }
 for _, mode in pairs(modes) do
-    M[mode.."map"] = function(key, cmd, opts)
-        return map(mode, key, cmd, opts)
-    end
-    M[mode.."noremap"] = function(key, cmd, opts)
-        return map(mode, key, cmd, opts, { noremap = true })
-    end
+  M[mode .. "map"] = function(key, cmd, opts)
+    return map(mode, key, cmd, opts)
+  end
+  M[mode .. "noremap"] = function(key, cmd, opts)
+    return map(mode, key, cmd, opts, { noremap = true })
+  end
 end
 
 function M.t(str)
