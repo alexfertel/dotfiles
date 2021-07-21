@@ -10,9 +10,9 @@ vim.g.tokyonight_style = "storm"
 vim.g.tokyonight_enable_italic = 1
 
 vim.g.ayucolor = "mirage"
-vim.cmd("colorscheme ayu")
+-- vim.cmd("colorscheme ayu")
 -- vim.cmd("colorscheme sonokai")
--- vim.cmd("colorscheme tokyonight")
+vim.cmd("colorscheme tokyonight")
 -- vim.cmd("colorscheme material")
 
 Colors = {
