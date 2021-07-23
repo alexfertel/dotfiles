@@ -72,7 +72,7 @@ plug("~/.local/share/nvim/plugged", {
   "norcalli/nvim-colorizer.lua",
   "vim-test/vim-test",
   "windwp/nvim-autopairs",
-  "simrat39/rust-tools.nvim",
+  -- "simrat39/rust-tools.nvim",
   "lukas-reineke/indent-blankline.nvim",
   "andymass/vim-matchup",
   "dstein64/vim-startuptime",
