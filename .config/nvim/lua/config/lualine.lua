@@ -119,12 +119,14 @@ local mode_colors = {
   t = Colors.red,
 }
 
-ins_left({
-  function()
+local function line_mode()
     local mode = vim.fn.mode()
     vim.api.nvim_command("hi! LualineMode cterm=bold gui=bold guifg=" .. Colors.bg .. " guibg=" .. mode_colors[mode])
     return " " .. mode_names[mode]
-  end,
+end
+
+ins_left({
+  line_mode,
   color = "LualineMode",
   left_padding = 0,
 })

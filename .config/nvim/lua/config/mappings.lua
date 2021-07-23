@@ -145,3 +145,6 @@ util.nmap("<leader>qs", [[<cmd>lua require("persistence").load()<cr>]])
 util.nmap("<leader>ql", [[<cmd>lua require("persistence").load({ last=true })<cr>]])
 -- stop Persistence => session won't be saved on exit
 util.nmap("<leader>qd", [[<cmd>lua require("persistence").stop()<cr>]])
+
+-- yank without the cursor moving to the top of the block
+util.vmap("y", "y']")
