@@ -64,6 +64,7 @@ plug("~/.local/share/nvim/plugged", {
   "tpope/vim-unimpaired",
   "tpope/vim-fugitive",
   "tpope/vim-dispatch",
+  "tpope/vim-abolish",
   "junegunn/goyo.vim",
   "junegunn/limelight.vim",
   "APZelos/blamer.nvim",
