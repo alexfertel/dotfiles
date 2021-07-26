@@ -94,5 +94,5 @@ plug("~/.local/share/nvim/plugged", {
   "itchyny/vim-highlighturl",
 
   -- Support for latex files
-  -- { "lervag/vimtex", opt = true },
+  "lervag/vimtex",
 })
