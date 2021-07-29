@@ -147,3 +147,4 @@ eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
 alias luamake=/home/alex/alex/software/lsps/lua-language-server/3rd/luamake/luamake
+autoload -U +X bashcompinit && bashcompinit
