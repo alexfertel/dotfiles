@@ -86,7 +86,7 @@ eval "$(pyenv virtualenv-init -)"
 fpath+=~/.zfunc
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$HOME/go/bin
+export PATH=$HOME/go/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
@@ -116,7 +116,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PG_OF_PATH="$HOME/alex/software/of-v0.11.0"
 export MYCONFIG="$HOME/.config"
 export MYNVIMCONFIG="$MYCONFIG/nvim"
