@@ -147,6 +147,8 @@ eval "$(starship init zsh)"
 
 # McFly to search shell history
 eval "$(mcfly init zsh)"
+export MCFLY_KEY_SCHEME=vim
+
 
 alias luamake=/home/alex/alex/software/lsps/lua-language-server/3rd/luamake/luamake
 autoload -U +X bashcompinit && bashcompinit
