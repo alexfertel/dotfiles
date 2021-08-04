@@ -145,5 +145,8 @@ eval "$(zoxide init zsh)"
 # starship prompt
 eval "$(starship init zsh)"
 
+# McFly to search shell history
+eval "$(mcfly init zsh)"
+
 alias luamake=/home/alex/alex/software/lsps/lua-language-server/3rd/luamake/luamake
 autoload -U +X bashcompinit && bashcompinit
