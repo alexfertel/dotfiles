@@ -6,7 +6,7 @@ vim.g.sonokai_diagnostic_line_highlight = 1
 vim.g.sonokai_diagnostic_virtual_text = "colored"
 vim.g.sonokai_better_performance = 1
 
-vim.g.tokyonight_style = "storm"
+vim.g.tokyonight_style = "night"
 vim.g.tokyonight_enable_italic = 1
 
 vim.g.ayucolor = "mirage"

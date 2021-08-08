@@ -81,6 +81,7 @@ plug("~/.local/share/nvim/plugged", {
   "brooth/far.vim",
   "rhysd/git-messenger.vim",
   "folke/which-key.nvim",
+  "sindrets/diffview.nvim",
 
   -- Snippets
   -- "hrsh7th/vim-vsnip",
