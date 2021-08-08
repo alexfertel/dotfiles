@@ -14,10 +14,10 @@ util.nnoremap("<c-s>", ":update<cr>", { silent = true })
 util.vnoremap("<c-s>", "<c-c>:update<cr>", { silent = true })
 util.inoremap("<c-s>", "<c-o>:update<cr>", { silent = true })
 
--- Use <leader>l to clear the highlighting of :set hlsearch.
+-- Use <leader>h to clear the highlighting of :set hlsearch.
 vim.cmd([[
-if maparg('<leader>l', 'n') ==# ''
-  nnoremap <silent> <leader>l :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><leader>l
+if maparg('<leader>h', 'n') ==# ''
+  nnoremap <silent> <leader>h :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><leader>h
 endif
 ]])
 
