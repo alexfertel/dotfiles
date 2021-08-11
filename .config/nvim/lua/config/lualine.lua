@@ -1,7 +1,7 @@
 -- This is a modified version of https://gist.github.com/hoob3rt/b200435a765ca18f09f83580a606b878
 -- merged with https://github.com/folke/dot
 
--- local devicons = load("nvim-web-devicons")
+-- local devicons = require("nvim-web-devicons")
 
 local conditions = {
   buffer_not_empty = function()
@@ -274,4 +274,4 @@ ins_right({
   condition = conditions.hide_in_width,
 })
 
-load("lualine").setup(config)
+require("lualine").setup(config)

@@ -74,4 +74,4 @@ local opts = {
   server = {}, -- rust-analyer options
 }
 
-load("rust-tools").setup(opts)
+require("rust-tools").setup(opts)

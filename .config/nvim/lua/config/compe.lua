@@ -5,7 +5,7 @@ vim.g.vsnip_filetypes = {
   typescript = { "typescript" },
 }
 
-load("compe").setup({
+require("compe").setup({
   enabled = true,
   autocomplete = true,
   debug = false,
@@ -37,7 +37,7 @@ load("compe").setup({
   },
 })
 
-local t = load("util").t
+local t = require("util").t
 
 local check_back_space = function()
   local col = vim.fn.col(".") - 1

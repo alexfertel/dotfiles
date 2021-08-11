@@ -1,4 +1,4 @@
-load("gitsigns").setup({
+require("gitsigns").setup({
   signs = {
     add = { hl = "DiffAdd", text = "│", numhl = "GitSignsAddNr" },
     change = { hl = "DiffChange", text = "│", numhl = "GitSignsChangeNr" },

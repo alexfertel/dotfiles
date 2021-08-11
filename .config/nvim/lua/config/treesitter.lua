@@ -1,5 +1,5 @@
-load("nvim-treesitter.install").compilers = { "gcc", "clang" }
-load("nvim-treesitter.configs").setup({
+require("nvim-treesitter.install").compilers = { "gcc", "clang" }
+require("nvim-treesitter.configs").setup({
   ensure_installed = {
     "bash",
     "comment",

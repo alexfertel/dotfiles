@@ -1,7 +1,7 @@
--- local wk = load("which-key")
-local util = load("util")
+-- local wk = require("which-key")
+local util = require("util")
 
--- local presets = load("which-key.plugins.presets")
+-- local presets = require("which-key.plugins.presets")
 -- presets.objects["a("] = nil
 -- wk.setup({ show_help = false, triggers = "auto", plugins = { spelling = true }, key_labels = { ["<leader>"] = "SPC" } })
 
@@ -140,9 +140,9 @@ util.vnoremap("<c-j>", [[:m '>+1<CR>gv=gv]])
 util.vnoremap("<c-k>", [[:m '<-2<CR>gv=gv]])
 
 -- restore the session for the current directory
-util.nmap("<leader>qs", [[<cmd>lua require("persistence").load()<cr>]])
+util.nmap("<leader>qs", [[<cmd>lua require("persistence").require()<cr>]])
 -- restore the last session
-util.nmap("<leader>ql", [[<cmd>lua require("persistence").load({ last=true })<cr>]])
+util.nmap("<leader>ql", [[<cmd>lua require("persistence").require({ last=true })<cr>]])
 -- stop Persistence => session won't be saved on exit
 util.nmap("<leader>qd", [[<cmd>lua require("persistence").stop()<cr>]])
 

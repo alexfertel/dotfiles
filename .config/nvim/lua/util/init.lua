@@ -2,11 +2,6 @@ _G.dump = function(...)
   print(vim.inspect(...))
 end
 
-_G.load = function(file)
-  require("plenary.reload").reload_module(file, true)
-  return require(file)
-end
-
 local M = {}
 
 M.functions = {}
@@ -25,9 +20,9 @@ local map = function(mode, key, cmd, opts, defaults)
   if type(cmd) == "function" then
     table.insert(M.functions, cmd)
     if opts.expr then
-      cmd = ([[luaeval('load("util").execute(%d)')]]):format(#M.functions)
+      cmd = ([[luaeval('require("util").execute(%d)')]]):format(#M.functions)
     else
-      cmd = ("<cmd>lua load('util').execute(%d)<cr>"):format(#M.functions)
+      cmd = ("<cmd>lua require('util').execute(%d)<cr>"):format(#M.functions)
     end
   end
   if opts.buffer ~= nil then

@@ -1,11 +1,11 @@
-load("lsp.lspkind")
---load("lsp.rust-tools")
+require("lsp.lspkind")
+--require("lsp.rust-tools")
 
---local lspconfig = load("lspconfig")
---local util = load("util")
+--local lspconfig = require("lspconfig")
+--local util = require("util")
 
 --local function on_attach(client, bufnr)
---	load("lsp.formatting").setup(client, bufnr)
+--	require("lsp.formatting").setup(client, bufnr)
 
 --	local buf_map = vim.api.nvim_buf_set_keymap
 
@@ -30,7 +30,7 @@ load("lsp.lspkind")
 --	-- TypeScript specific stuff
 --	if client.name == "typescript" or client.name == "tsserver" then
 --		client.resolved_capabilities.document_formatting = false
---		-- load("lsp.ts-utils").setup(client)
+--		-- require("lsp.ts-utils").setup(client)
 --	end
 --end
 
@@ -50,14 +50,14 @@ load("lsp.lspkind")
 --	jsonls = { cmd = { "vscode-json-languageserver", "--stdio" } },
 --	html = { cmd = { "html-languageserver", "--stdio" } },
 --	clangd = {},
---	sumneko_lua = load("lua-dev").setup({
+--	sumneko_lua = require("lua-dev").setup({
 --		library = { plugins = { "nvim-treesitter", "plenary.nvim", "telescope.nvim" } },
 --		lspconfig = { cmd = lua_cmd },
 --	}),
---	efm = load("lsp.efm").config,
+--	efm = require("lsp.efm").config,
 --	vimls = {},
 --	-- tailwindcss = {},
---	diagnosticls = load("lsp.diagnosticls"),
+--	diagnosticls = require("lsp.diagnosticls"),
 --}
 
 --local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -83,13 +83,13 @@ load("lsp.lspkind")
 ---- This may be uncommented in the future. I haven't found a way to
 ---- get support for autoimports, which I love.
 ----
----- load("null-ls").setup({})
+---- require("null-ls").setup({})
 ---- lspconfig.tsserver.setup({
 ---- 	on_attach = function(client, bufnr)
 ---- 		-- disable tsserver formatting if you plan on formatting via null-ls
 ---- 		client.resolved_capabilities.document_formatting = false
 
----- 		local ts = load("nvim-lsp-ts-utils")
+---- 		local ts = require("nvim-lsp-ts-utils")
 ---- 		vim.lsp.handlers["textDocument/codeAction"] = ts.code_action_handler
 
 ---- 		-- defaults
