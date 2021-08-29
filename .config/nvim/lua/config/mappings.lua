@@ -53,8 +53,19 @@ util.map("", "<m-j>", "<c-d>")
 util.nnoremap("<m-h>", "<cmd>BufferLineCyclePrev<CR>", { silent = true })
 util.nnoremap("<m-l>", "<cmd>BufferLineCycleNext<CR>", { silent = true })
 
+-- These mappings will change to the numbered visible directory
+util.nnoremap("<leader>1", "<Cmd>BufferLineGoToBuffer 1<CR>", { silent = true })
+util.nnoremap("<leader>2", "<Cmd>BufferLineGoToBuffer 2<CR>", { silent = true })
+util.nnoremap("<leader>3", "<Cmd>BufferLineGoToBuffer 3<CR>", { silent = true })
+util.nnoremap("<leader>4", "<Cmd>BufferLineGoToBuffer 4<CR>", { silent = true })
+util.nnoremap("<leader>5", "<Cmd>BufferLineGoToBuffer 5<CR>", { silent = true })
+util.nnoremap("<leader>6", "<Cmd>BufferLineGoToBuffer 6<CR>", { silent = true })
+util.nnoremap("<leader>7", "<Cmd>BufferLineGoToBuffer 7<CR>", { silent = true })
+util.nnoremap("<leader>8", "<Cmd>BufferLineGoToBuffer 8<CR>", { silent = true })
+util.nnoremap("<leader>9", "<Cmd>BufferLineGoToBuffer 9<CR>", { silent = true })
+
 -- These commands will sort buffers by directory, language, or a custom criteria
-util.nnoremap("<leader>be", "<cmd>BufferLineSortByExtension", { silent = true })
+util.nnoremap("<leader>be", "<cmd>BufferLineSortByExtension", {  silent = true  })
 util.nnoremap("<leader>bd", "<cmd>BufferLineSortByDirectory<CR>", { silent = true })
 
 -- Close buffer
