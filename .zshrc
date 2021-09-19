@@ -133,6 +133,8 @@ alias dloga='dlog --all'
 alias ll='exa -l'
 alias lla='exa -la'
 
+alias nv='nordvpn'
+
 autoload -Uz compinit
 compinit
 
