@@ -21,3 +21,4 @@ require("config.bufferline")
 require("config.autopairs")
 require("config.telescope")
 require("config.startify")
+
