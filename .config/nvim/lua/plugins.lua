@@ -41,6 +41,7 @@ plug("~/.local/share/nvim/plugged", {
    "nvim-treesitter/nvim-treesitter",
    "cespare/vim-toml",
    "folke/lua-dev.nvim",
+   "tikhomirov/vim-glsl",
 
    -- ui
    "kyazdani42/nvim-web-devicons",
