@@ -2,13 +2,14 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/alex/.oh-my-zsh"
+export ZSH="/Users/alexfertel/.oh-my-zsh"
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="common"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -71,17 +72,16 @@ ZSH_THEME="common"
 plugins=(
 	git
 	history-substring-search
-	poetry
 	docker
 	colored-man-pages
-	zsh-syntax-highlighting
+	# zsh-syntax-highlighting
 	# zsh-autosuggestions
 	npm
 )
 
 export PATH="/home/alex/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 fpath+=~/.zfunc
 export PATH="$HOME/.poetry/bin:$PATH"
@@ -121,7 +121,7 @@ export MYCONFIG="$HOME/.config"
 export MYNVIMCONFIG="$MYCONFIG/nvim"
 export MYVIMRC="$MYNVIMCONFIG/init.lua"
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias d='dotfiles'
 alias dco='d checkout'
 alias dcmsg='d commit -m'
