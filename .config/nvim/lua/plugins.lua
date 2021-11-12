@@ -75,7 +75,7 @@ plug("~/.local/share/nvim/plugged", {
    "vim-test/vim-test",
    "windwp/nvim-autopairs",
    -- "simrat39/rust-tools.nvim",
-   "lukas-reineke/indent-blankline.nvim",
+   -- "lukas-reineke/indent-blankline.nvim",
    "andymass/vim-matchup",
    "dstein64/vim-startuptime",
    "romainl/vim-qf",
@@ -83,6 +83,7 @@ plug("~/.local/share/nvim/plugged", {
    "rhysd/git-messenger.vim",
    "folke/which-key.nvim",
    "sindrets/diffview.nvim",
+   "github/copilot.vim",
 
    -- Snippets
    -- "hrsh7th/vim-vsnip",

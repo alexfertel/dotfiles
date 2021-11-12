@@ -46,12 +46,12 @@ util.nnoremap("<leader>fc", "<cmd>Telescope lsp_code_actions<cr>")
 util.nnoremap("<leader>sv", "<cmd>luafile $MYVIMRC<CR>")
 
 -- Remaps Scroll up and down
-util.map("", "<m-k>", "<c-u>")
-util.map("", "<m-j>", "<c-d>")
+util.map("", "<c-k>", "<c-u>")
+util.map("", "<c-j>", "<c-d>")
 
 -- These commands will move the current buffer backwards or forwards in the bufferline
-util.nnoremap("<m-h>", "<cmd>BufferLineCyclePrev<CR>", { silent = true })
-util.nnoremap("<m-l>", "<cmd>BufferLineCycleNext<CR>", { silent = true })
+util.nnoremap("<s-h>", "<cmd>BufferLineCyclePrev<CR>", { silent = true })
+util.nnoremap("<s-l>", "<cmd>BufferLineCycleNext<CR>", { silent = true })
 
 -- These mappings will change to the numbered visible directory
 util.nnoremap("<leader>1", "<Cmd>BufferLineGoToBuffer 1<CR>", { silent = true })
