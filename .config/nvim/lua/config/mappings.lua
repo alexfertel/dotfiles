@@ -144,7 +144,7 @@ util.nnoremap("<leader>go", ":<C-u>Goyo 100+8<CR>")
 -- )
 
 -- Copy whole file content
-util.nnoremap("ya", [[ <cmd> %y+<CR>]], { silent = true })
+util.nnoremap("yaa", [[ <cmd> %y+<CR>]], { silent = true })
 
 -- Move lines up and down
 util.vnoremap("<c-j>", [[:m '>+1<CR>gv=gv]])
@@ -159,3 +159,7 @@ util.nmap("<leader>qd", [[<cmd>lua require("persistence").stop()<cr>]])
 
 -- yank without the cursor moving to the top of the block
 util.vmap("y", "y']")
+
+-- Move between virtual lines and not logical lines.
+util.nnoremap("j", "gj", { silent = true })
+util.nnoremap("k", "gk", { silent = true })
