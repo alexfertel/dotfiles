@@ -30,19 +30,5 @@ Colors = {
   red = "#ec5f67",
 }
 
--- Set variant
--- Defaults to 'dawn' if vim background is light
--- @usage 'base' | 'moon' | 'dawn' | 'rose-pine[-moon][-dawn]'
-vim.g.rose_pine_variant = 'moon'
-
--- Disable italics
-vim.g.rose_pine_disable_italics = false
-
--- Use terminal background
-vim.g.rose_pine_disable_background = false
-
--- Use bold vertical split line
-vim.g.rose_pine_bold_vertical_split_line = true
-
 -- Set colorscheme after options
 vim.cmd('colorscheme rose-pine')

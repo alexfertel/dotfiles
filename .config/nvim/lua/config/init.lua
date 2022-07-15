@@ -1,3 +1,6 @@
+-- This one is required for ui
+require("config.rose-pine")
+
 -- These come first
 require("config.ui")
 require("config.matchup")
@@ -21,4 +24,3 @@ require("config.bufferline")
 require("config.autopairs")
 require("config.telescope")
 require("config.startify")
-

@@ -19,9 +19,6 @@ require("gitsigns").setup({
     ["n <leader>hp"] = '<cmd>lua load"gitsigns".preview_hunk()<CR>',
     ["n <leader>hb"] = '<cmd>lua load"gitsigns".blame_line()<CR>',
   },
-  watch_index = {
-    interval = 100,
-  },
   sign_priority = 5,
   status_formatter = nil, -- Use default
 })
