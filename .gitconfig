@@ -28,3 +28,7 @@
 [interactive]
     diffFilter = delta --color-only
 
+[pull]
+	rebase = false
+[push]
+	autoSetupRemote = true
