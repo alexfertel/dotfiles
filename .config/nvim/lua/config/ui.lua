@@ -15,6 +15,7 @@ vim.g.ayucolor = "mirage"
 -- vim.cmd("colorscheme tokyonight")
 -- vim.cmd("colorscheme rose-pine-moon")
 -- vim.cmd("colorscheme material")
+vim.cmd("colorscheme onedark")
 
 Colors = {
   bg = "#202328",
@@ -31,4 +32,4 @@ Colors = {
 }
 
 -- Set colorscheme after options
-vim.cmd('colorscheme rose-pine')
+-- vim.cmd('colorscheme rose-pine')

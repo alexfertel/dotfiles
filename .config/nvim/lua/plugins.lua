@@ -56,6 +56,7 @@ plug("~/.local/share/nvim/plugged", {
    "sainnhe/sonokai",
    "Luxed/ayu-vim",
    "rose-pine/neovim",
+   "navarasu/onedark.nvim",
 
    -- misc
    "tpope/vim-commentary",

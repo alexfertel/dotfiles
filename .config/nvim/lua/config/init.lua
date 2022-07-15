@@ -1,5 +1,6 @@
 -- This one is required for ui
 require("config.rose-pine")
+require("config.onedark")
 
 -- These come first
 require("config.ui")
