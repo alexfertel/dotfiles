@@ -154,3 +154,5 @@ export MCFLY_KEY_SCHEME=vim
 
 alias luamake=/home/alex/alex/software/lsps/lua-language-server/3rd/luamake/luamake
 autoload -U +X bashcompinit && bashcompinit
+
+export PATH="$PATH:/Users/alexfertel/.foundry/bin"
