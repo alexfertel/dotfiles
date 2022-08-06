@@ -17,5 +17,6 @@
     "typescript.tsx",
     "python",
     "graphql"
-  ]
+  ],
+  "python.pythonPath": "/opt/homebrew/bin/python3"
 }

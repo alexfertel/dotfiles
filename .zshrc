@@ -156,3 +156,4 @@ alias luamake=/home/alex/alex/software/lsps/lua-language-server/3rd/luamake/luam
 autoload -U +X bashcompinit && bashcompinit
 
 export PATH="$PATH:/Users/alexfertel/.foundry/bin"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
