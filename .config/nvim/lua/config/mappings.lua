@@ -32,6 +32,10 @@ util.nmap("<c-j>", ":wincmd j<CR>", { silent = true })
 util.nmap("<c-h>", ":wincmd h<CR>", { silent = true })
 util.nmap("<c-l>", ":wincmd l<CR>", { silent = true })
 
+-- Remaps Scroll up and down
+util.map("", "<c-k>", "<c-u>")
+util.map("", "<c-j>", "<c-d>")
+
 -- Find files using Telescope command-line sugar.
 util.nnoremap("<c-p>", "<cmd>Telescope find_files<cr>")
 util.nnoremap("<leader>fg", "<cmd>Telescope git_files<cr>")
@@ -44,10 +48,6 @@ util.nnoremap("<leader>fc", "<cmd>Telescope lsp_code_actions<cr>")
 
 -- This will reload init.lua from inside nvim
 util.nnoremap("<leader>sv", "<cmd>luafile $MYVIMRC<CR>")
-
--- Remaps Scroll up and down
-util.map("", "<c-k>", "<c-u>")
-util.map("", "<c-j>", "<c-d>")
 
 -- These commands will move the current buffer backwards or forwards in the bufferline
 util.nnoremap("<s-h>", "<cmd>BufferLineCyclePrev<CR>", { silent = true })
