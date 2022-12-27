@@ -23,14 +23,29 @@ plug("~/.local/share/nvim/plugged", {
    -- "neovim/nvim-lspconfig",
    -- "hrsh7th/nvim-compe",
    -- "kosayoda/nvim-lightbulb",
-   "onsails/lspkind-nvim",
+   -- "onsails/lspkind-nvim",
    -- "jose-elias-alvarez/nvim-lsp-ts-utils",
    -- "jose-elias-alvarez/null-ls.nvim",
    -- "JoosepAlviste/nvim-ts-context-commentstring",
    -- "windwp/nvim-ts-autotag",
+   'neovim/nvim-lspconfig',
+   'williamboman/mason.nvim',
+   'williamboman/mason-lspconfig.nvim',
+
+   'hrsh7th/nvim-cmp',
+   'hrsh7th/cmp-buffer',
+   'hrsh7th/cmp-path',
+   'saadparwaiz1/cmp_luasnip',
+   'hrsh7th/cmp-nvim-lsp',
+   'hrsh7th/cmp-nvim-lua',
+
+   'L3MON4D3/LuaSnip',
+   'rafamadriz/friendly-snippets',
+
+   'VonHeikemen/lsp-zero.nvim',
 
    -- coc
-   { "neoclide/coc.nvim", branch = "release" },
+   -- { "neoclide/coc.nvim", branch = "release" },
 
    -- fuzzy finder
    "nvim-lua/plenary.nvim",
@@ -38,10 +53,11 @@ plug("~/.local/share/nvim/plugged", {
    "nvim-telescope/telescope-fzy-native.nvim",
 
    -- syntax
+   -- Always run `:TSUpdate` after updating this
    "nvim-treesitter/nvim-treesitter",
-   "cespare/vim-toml",
-   "folke/lua-dev.nvim",
-   "tikhomirov/vim-glsl",
+   -- "cespare/vim-toml",
+   -- "folke/lua-dev.nvim",
+   -- "tikhomirov/vim-glsl",
 
    -- ui
    "kyazdani42/nvim-web-devicons",
@@ -95,8 +111,8 @@ plug("~/.local/share/nvim/plugged", {
    "wellle/targets.vim",
 
    -- Highlight URLs inside vim
-   "itchyny/vim-highlighturl",
+   -- "itchyny/vim-highlighturl",
 
    -- Support for latex files
-   "lervag/vimtex",
+   -- "lervag/vimtex",
 })

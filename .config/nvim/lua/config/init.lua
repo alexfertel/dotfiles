@@ -8,7 +8,7 @@ require("config.matchup")
 require("config.misc")
 require("config.mappings")
 
-vim.cmd("source $MYNVIMCONFIG/lua/config/coc.vim")
+-- vim.cmd("source $MYNVIMCONFIG/lua/config/coc.vim")
 vim.cmd("source $MYNVIMCONFIG/lua/config/autocommands.vim")
 
 -- These come after

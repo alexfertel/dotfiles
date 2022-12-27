@@ -172,3 +172,8 @@ util.vnoremap("p", [["_dP<Esc>]], { silent = true })
 -- Move between virtual lines and not logical lines.
 util.nnoremap("j", "gj", { silent = true })
 util.nnoremap("k", "gk", { silent = true })
+
+-- Avoid copilot collissions
+vim.g.copilot_no_tab_map = true
+util.inoremap("<c-l>", [[copilot#Accept("\<CR>")]], { silent = true, expr = true })
+
