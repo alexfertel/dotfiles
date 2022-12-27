@@ -73,6 +73,8 @@ plug("~/.local/share/nvim/plugged", {
    "Luxed/ayu-vim",
    "rose-pine/neovim",
    "navarasu/onedark.nvim",
+   "lunarvim/horizon.nvim",
+   "rebelot/kanagawa.nvim",
 
    -- misc
    "tpope/vim-commentary",

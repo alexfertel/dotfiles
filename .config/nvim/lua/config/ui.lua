@@ -13,9 +13,11 @@ vim.g.ayucolor = "mirage"
 -- vim.cmd("colorscheme ayu")
 -- vim.cmd("colorscheme sonokai")
 -- vim.cmd("colorscheme tokyonight")
--- vim.cmd("colorscheme rose-pine-moon")
+-- vim.cmd("colorscheme rose-pine")
 -- vim.cmd("colorscheme material")
-vim.cmd("colorscheme onedark")
+-- vim.cmd("colorscheme onedark")
+-- vim.cmd("colorscheme horizon")
+vim.cmd("colorscheme kanagawa")
 
 Colors = {
   bg = "#202328",
