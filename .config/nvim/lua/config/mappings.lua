@@ -167,7 +167,7 @@ util.nnoremap("<leader>d", [["_d]], { silent = true })
 util.vnoremap("<leader>d", [["_d]], { silent = true })
 -- replace currently selected text with default register
 -- without yanking it
-util.vnoremap("p", "<leader>dP", { silent = true })
+util.vnoremap("p", [["_dP<Esc>]], { silent = true })
 
 -- Move between virtual lines and not logical lines.
 util.nnoremap("j", "gj", { silent = true })
