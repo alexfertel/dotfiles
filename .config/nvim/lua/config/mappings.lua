@@ -157,17 +157,8 @@ util.nmap("<leader>ql", [[<cmd>lua require("persistence").require({ last=true })
 -- stop Persistence => session won't be saved on exit
 util.nmap("<leader>qd", [[<cmd>lua require("persistence").stop()<cr>]])
 
--- yank without the cursor moving to the top of the block
-util.vmap("y", "y']")
--- paste without yanking the visually selected text
--- That is, if you yank something, and then visual select something else, and then paste,
--- you won't yank the visual selection.
--- Also, allow deleting without yanking.
-util.nnoremap("<leader>d", [["_d]], { silent = true })
-util.vnoremap("<leader>d", [["_d]], { silent = true })
--- replace currently selected text with default register
--- without yanking it
-util.vnoremap("p", [["_dP<Esc>]], { silent = true })
+-- -- yank without the cursor moving to the top of the block
+-- util.vmap("y", "y']")
 
 -- Move between virtual lines and not logical lines.
 util.nnoremap("j", "gj", { silent = true })
