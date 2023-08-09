@@ -9,13 +9,17 @@ vim.g.sonokai_better_performance = 1
 vim.g.tokyonight_style = "storm"
 vim.g.tokyonight_enable_italic = 1
 
+-- vim.g.gruvbox_material_background = 'soft'
+
 vim.g.ayucolor = "mirage"
 -- vim.cmd("colorscheme ayu")
 -- vim.cmd("colorscheme sonokai")
 -- vim.cmd("colorscheme tokyonight")
 -- vim.cmd("colorscheme rose-pine-moon")
 -- vim.cmd("colorscheme material")
-vim.cmd("colorscheme onedark")
+-- vim.cmd("colorscheme onedark")
+-- vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme gruvbox-material")
 
 Colors = {
   bg = "#202328",

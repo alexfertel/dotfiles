@@ -47,9 +47,10 @@ plug("~/.local/share/nvim/plugged", {
    "kyazdani42/nvim-web-devicons",
    "mhinz/vim-startify",
    "psliwka/vim-smoothie",
+   { "echasnovski/mini.statusline", branch = "stable" },
    "kyazdani42/nvim-tree.lua",
-   "akinsho/nvim-bufferline.lua",
-   "hoob3rt/lualine.nvim",
+   -- "akinsho/nvim-bufferline.lua",
+   -- "hoob3rt/lualine.nvim",
 
    -- themes
    "folke/tokyonight.nvim",
@@ -57,6 +58,8 @@ plug("~/.local/share/nvim/plugged", {
    "Luxed/ayu-vim",
    "rose-pine/neovim",
    "navarasu/onedark.nvim",
+   "ellisonleao/gruvbox.nvim",
+   "sainnhe/gruvbox-material",
 
    -- misc
    "tpope/vim-commentary",
