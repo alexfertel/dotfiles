@@ -151,9 +151,14 @@ eval "$(starship init zsh)"
 eval "$(mcfly init zsh)"
 export MCFLY_KEY_SCHEME=vim
 
+# GPG key pair config to auto-sign git commits
+export GPG_TTY=$(tty)
+gpgconf --launch gpg-agent
 
 alias luamake=/home/alex/alex/software/lsps/lua-language-server/3rd/luamake/luamake
 autoload -U +X bashcompinit && bashcompinit
 
 export PATH="$PATH:/Users/alexfertel/.foundry/bin"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH="$HOME/.fuelup/bin:$PATH"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"

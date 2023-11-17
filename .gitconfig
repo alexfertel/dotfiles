@@ -1,6 +1,7 @@
 [user]
 	email = alexfertel97@gmail.com
 	name = Alexander Gonzalez
+	signingkey = 8B877F48
 
 [alias]
 	co = checkout
@@ -32,3 +33,7 @@
 	rebase = false
 [push]
 	autoSetupRemote = true
+[commit]
+	gpgSign = true
+[tap]
+	gpgSign = true
