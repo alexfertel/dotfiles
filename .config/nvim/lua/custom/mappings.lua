@@ -12,7 +12,7 @@ M.disabled = {
 M.general = {
   n = {
     [";"] = { ":", "Enter command mode", opts = { nowait = true } },
-    ["C-s"] = { ":update<CR>", "Save file", opts = { silent = true, noremap = true } },
+    ["<C-s>"] = { ":update<CR>", "Save file", opts = { silent = true, noremap = true } },
     ["yaa"] = { "<cmd> %y+<CR>", "Copy whole file", opts = { silent = true, noremap = true } },
 
     -- nvim-tree mapppings
@@ -33,10 +33,10 @@ M.general = {
     ["<leader>fq"] = { "<cmd>Telescope quickfix<CR>", "Quick fix", opts = { noremap = true } },
   },
   v = {
-    ["C-s"] = { "<C-c>:update<CR>", "Save file", opts = { silent = true, noremap = true } },
+    ["<C-s>"] = { "<C-c>:update<CR>", "Save file", opts = { silent = true, noremap = true } },
   },
   i = {
-    ["C-s"] = { "<C-o>:update<CR>", "Save file", opts = { silent = true, noremap = true } },
+    ["<C-s>"] = { "<C-o>:update<CR>", "Save file", opts = { silent = true, noremap = true } },
   },
 }
 

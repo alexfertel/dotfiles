@@ -4,8 +4,12 @@ local b = null_ls.builtins
 
 local sources = {
   b.formatting.clang_format,
-  b.formatting.deno_fmt.with({filetypes = { "javascript", "javascriptreact", "json", "jsonc", "markdown", "typescript", "typescriptreact" }}),
-  b.formatting.prettier.with({filetypes = { "vue", "css", "scss", "less", "html", "yaml", "markdown.mdx", "graphql", "handlebars" }}),
+  b.formatting.deno_fmt.with {
+    filetypes = { "javascript", "javascriptreact", "json", "jsonc", "markdown", "typescript", "typescriptreact" },
+  },
+  b.formatting.prettier.with {
+    filetypes = { "vue", "css", "scss", "less", "html", "yaml", "markdown.mdx", "graphql", "handlebars" },
+  },
   b.formatting.ruff,
   b.formatting.rustfmt,
   b.formatting.stylua,
