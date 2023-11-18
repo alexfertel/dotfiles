@@ -6,6 +6,12 @@ local options = {
     on_attach = on_attach,
     capabilities = capabilities,
   },
+
+  tools = {
+    inlay_hints = {
+      max_len_align = true,
+    },
+  },
 }
 
 return options
