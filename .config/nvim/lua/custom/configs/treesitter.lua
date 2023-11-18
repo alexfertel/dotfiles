@@ -1,0 +1,27 @@
+return {
+  ensure_installed = {
+    "bash",
+    "c",
+    "comment",
+    "css",
+    "html",
+    "javascript",
+    "jsdoc",
+    "json",
+    "lua",
+    "markdown",
+    "markdown_inline",
+    "python",
+    "rust",
+    "scss",
+    "typescript",
+    "tsx",
+    "toml",
+    "vue",
+    "vim",
+    "yaml",
+  },
+  indent = {
+    enable = true,
+  },
+}

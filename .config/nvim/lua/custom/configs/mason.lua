@@ -1,0 +1,20 @@
+return {
+  ensure_installed = {
+    "beautysh",
+    "clang-format",
+    "clangd",
+    "css-lsp",
+    "deno",
+    "eslint-lsp",
+    "html-lsp",
+    "lua-language-server",
+    "prettier",
+    "ruff",
+    "rust-analyzer",
+    "solidity",
+    "solhint",
+    "sqlfmt",
+    "stylua",
+    "typescript-language-server",
+  },
+}
