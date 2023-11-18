@@ -64,6 +64,19 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
+  { "psliwka/vim-smoothie", lazy = false },
+  { "tpope/vim-surround", lazy = false },
+  { "tpope/vim-repeat", lazy = false },
+  { "tpope/vim-unimpaired", lazy = false },
+  { "APZelos/blamer.nvim", lazy = false },
+  { "wellle/targets.vim", lazy = false },
+  {
+    "ggandor/leap.nvim",
+    config = function()
+      require("leap").add_default_mappings()
+    end,
+    lazy = false,
+  },
 }
 
 return plugins
