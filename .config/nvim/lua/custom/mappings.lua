@@ -7,6 +7,8 @@ M.disabled = {
     ["<C-n>"] = "",
     ["<leader>e"] = "",
     ["<leader>h"] = "",
+    ["<tab>"] = "",
+    ["<S-tab>"] = "",
   },
 }
 
@@ -15,6 +17,9 @@ M.general = {
     [";"] = { ":", "Enter command mode", opts = { nowait = true } },
     ["<C-s>"] = { ":update<CR>", "Save file", opts = { silent = true, noremap = true } },
     ["yaa"] = { "<cmd> %y+<CR>", "Copy whole file", opts = { silent = true, noremap = true } },
+    -- tl;dr remapping <tab> breaks <c-i>.
+    -- See https://github.com/NvChad/NvChad/issues/2467
+    ["<C-i>"] = { "<C-i>", opts = { noremap = true } },
 
     -- nvim-tree mapppings
     ["<leader>ntt"] = { ":NvimTreeToggle<CR>", "Toggle nvim-tree", opts = { silent = true } },
