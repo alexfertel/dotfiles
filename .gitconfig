@@ -1,7 +1,7 @@
 [user]
 	email = alexfertel97@gmail.com
 	name = Alexander Gonzalez
-	signingkey = 8B877F48
+	signingkey = 8B6781A647782D9391646A53E069BD3F8B877F48
 
 [alias]
 	co = checkout
@@ -34,6 +34,8 @@
 [push]
 	autoSetupRemote = true
 [commit]
-	gpgSign = true
+	gpgsign = true
 [tap]
 	gpgSign = true
+[gpg]
+	program = /usr/local/bin/gpg

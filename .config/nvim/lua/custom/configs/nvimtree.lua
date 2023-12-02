@@ -8,7 +8,10 @@ return {
   git = {
     enable = true,
   },
-
+  update_focused_file = {
+    enable = false,
+    update_root = false,
+  },
   renderer = {
     highlight_git = true,
     icons = {

@@ -16,5 +16,6 @@ return {
     "sqlfmt",
     "stylua",
     "typescript-language-server",
+    "tailwindcss-language-server",
   },
 }
