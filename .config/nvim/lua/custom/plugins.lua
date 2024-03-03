@@ -6,6 +6,7 @@ local plugins = {
       -- Format & linting.
       {
         "nvimtools/none-ls.nvim",
+        commit = "bb680d752cec37949faca7a1f509e2fe67ab418a",
         config = function()
           require "custom.configs.null-ls"
         end,

@@ -70,13 +70,13 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
-	history-substring-search
-	docker
-	colored-man-pages
-	# zsh-syntax-highlighting
-	# zsh-autosuggestions
-	npm
+    git
+    history-substring-search
+    docker
+    colored-man-pages
+    # zsh-syntax-highlighting
+    # zsh-autosuggestions
+    npm
 )
 
 export PATH="/home/alex/.pyenv/bin:$PATH"
@@ -162,3 +162,4 @@ export PATH="$PATH:/Users/alexfertel/.foundry/bin"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export PATH="$HOME/.fuelup/bin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+export PATH="/Users/alexfertel/.local/bin:$PATH"

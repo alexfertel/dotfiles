@@ -105,3 +105,9 @@ vim.g.markdown_fenced_languages = fences
 vim.g.blamer_enabled = 1
 vim.g.blamer_delay = 500
 vim.g.blamer_relative_time = 1
+
+vim.filetype.add {
+  extension = {
+    mdx = "markdown",
+  },
+}

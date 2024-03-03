@@ -8,6 +8,7 @@ return {
     "eslint-lsp",
     "html-lsp",
     "lua-language-server",
+    "mdx-analyzer",
     "prettier",
     "ruff",
     "rust-analyzer",
