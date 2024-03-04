@@ -541,6 +541,10 @@ require('lazy').setup {
               callback = vim.lsp.buf.clear_references,
             })
           end
+
+          if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
+            vim.lsp.inlay_hint.enable(event.buf, true)
+          end
         end,
       })
 
