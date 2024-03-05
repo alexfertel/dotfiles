@@ -193,7 +193,7 @@ vim.keymap.set('i', '<C-s>', '<C-o>:update<CR>', { silent = true, noremap = true
 
 vim.keymap.set('n', 'yaa', '<cmd> %y+<CR>', { silent = true, noremap = true, desc = 'Copy whole file' })
 
--- nvim-tree mapppings
+-- Neotree
 vim.keymap.set('n', '<leader>ntt', ':Neotree toggle<CR>', { silent = true, desc = 'Toggle neo-tree' })
 
 -- Don't copy the replaced text after pasting in visual mode
@@ -754,11 +754,11 @@ require('lazy').setup {
               luasnip.expand_or_jump()
             end
           end, { 'i', 's' }),
-          ['<C-h>'] = cmp.mapping(function()
-            if luasnip.locally_jumpable(-1) then
-              luasnip.jump(-1)
-            end
-          end, { 'i', 's' }),
+          -- ['<C-h>'] = cmp.mapping(function()
+          --   if luasnip.locally_jumpable(-1) then
+          --     luasnip.jump(-1)
+          --   end
+          -- end, { 'i', 's' }),
         },
         sources = {
           { name = 'nvim_lsp' },
