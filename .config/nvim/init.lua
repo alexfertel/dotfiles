@@ -200,6 +200,13 @@ vim.keymap.set('n', '<leader>ntt', ':Neotree toggle<CR>', { silent = true, desc 
 -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text#Alternative_mapping_for_paste
 vim.keymap.set('x', 'p', 'p:let @+=@0<CR>:let @"=@0<CR>', { silent = true, desc = 'Dont copy replaced text' })
 
+-- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
+-- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
+-- empty mode is same as using <cmd> :map
+-- also don't use g[j|k] when in operator pending mode, so it doesn't alter d, y or c behaviour
+vim.keymap.set('n', 'j', 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { expr = true, desc = 'Move down the cursor' })
+vim.keymap.set('n', 'k', 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { expr = true, desc = 'Move up the cursor' })
+
 ----------------------------------------------------------------------------------------
 ------------------------------------- Autocmds -----------------------------------------
 ----------------------------------------------------------------------------------------
@@ -216,15 +223,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-vim.api.nvim_create_autocmd('BufEnter', {
-  group = vim.api.nvim_create_augroup('NvimTreeClose', { clear = true }),
-  callback = function()
-    local layout = vim.api.nvim_call_function('winlayout', {})
-    if layout[1] == 'leaf' and vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(layout[2]), 'filetype') == 'NvimTree' and layout[3] == nil then
-      vim.cmd 'quit'
-    end
-  end,
-})
 ----------------------------------------------------------------------------------------
 -------------------------------------- Plugins -----------------------------------------
 ----------------------------------------------------------------------------------------
@@ -542,9 +540,10 @@ require('lazy').setup {
             })
           end
 
-          if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-            vim.lsp.inlay_hint.enable(event.buf, true)
-          end
+          -- Enable inlay_hints if the lsp server supports it.
+          -- if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
+          --   vim.lsp.inlay_hint.enable(event.buf, true)
+          -- end
         end,
       })
 
