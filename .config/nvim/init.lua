@@ -541,9 +541,9 @@ require('lazy').setup {
           end
 
           -- Enable inlay_hints if the lsp server supports it.
-          -- if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-          --   vim.lsp.inlay_hint.enable(event.buf, true)
-          -- end
+          if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
+            vim.lsp.inlay_hint.enable(event.buf, true)
+          end
         end,
       })
 
@@ -572,7 +572,67 @@ require('lazy').setup {
         html = {},
         mdx_analyzer = {},
         ruff_lsp = {},
-        rust_analyzer = {},
+        rust_analyzer = {
+          settings = {
+            ['rust-analyzer'] = {
+              cargo = {
+                features = 'all',
+              },
+              imports = {
+                granularity = 'One',
+              },
+              inlayHints = {
+                bindingModeHints = {
+                  enable = true,
+                },
+                chainingHints = {
+                  enable = true,
+                },
+                closingBraceHints = {
+                  enable = true,
+                },
+                closureCaptureHints = {
+                  enable = false,
+                },
+                closureReturnTypeHints = {
+                  enable = false,
+                },
+                closureStyle = 'impl_fn',
+                discriminantHints = {
+                  enable = 'always',
+                },
+                expressionAdjustmentHints = {
+                  enable = 'always',
+                  mode = 'prefix',
+                  hideOutsideUnsafe = true,
+                },
+                implicitDrops = {
+                  enable = false,
+                },
+                lifetimeEllisionHints = {
+                  enable = 'always',
+                  useParameterNames = false,
+                },
+                maxLength = 25,
+                parameterHints = {
+                  enable = false,
+                },
+                rangeExclusiveHints = {
+                  enable = false,
+                },
+                reborrowHints = {
+                  enable = 'never',
+                },
+                renderColons = true,
+                typeHints = {
+                  enable = true,
+                  hideClosureInitialization = false,
+                  hideNamedConstructor = false,
+                },
+              },
+            },
+          },
+        },
         solidity_ls_nomicfoundation = {},
         tailwindcss = {},
         taplo = {},
