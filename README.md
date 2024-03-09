@@ -13,6 +13,5 @@ I followed the thoughts written in the following links:
 
 ## Neovim
 
-![Javascript](https://user-images.githubusercontent.com/22298999/126047027-a555dd21-c85d-45bb-ab1e-01d426df389f.png)
-![Rust](https://user-images.githubusercontent.com/22298999/126047072-93d4cd67-bf24-4d53-bdb1-3f37741a5825.png)
+![Rust](https://github.com/alexfertel/dotfiles/assets/22298999/b438e7ee-ffc1-487d-8732-af3f801d3a9c)
 
