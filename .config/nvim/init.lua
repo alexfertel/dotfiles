@@ -95,6 +95,9 @@ vim.opt.nrformats:remove { 'octal' }
 
 -- Line number column width
 vim.opt.numberwidth = 4
+-- Displays a ruler at a specific column number and sets it's color.
+vim.opt.colorcolumn = '80'
+vim.cmd.hi 'ColorColumn ctermbg=0 guibg=lightgrey'
 -- Shows entered commands
 vim.opt.showcmd = true
 
