@@ -543,9 +543,15 @@ require('lazy').setup {
             })
           end
 
-          -- Enable inlay_hints if the lsp server supports it.
+          -- The following autocommand is used to enable inlay hints in your
+          -- code, if the language server you are using supports them
+          --
+          -- This may be unwanted, since they displace some of your code
           if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-            vim.lsp.inlay_hint.enable(event.buf, true)
+            vim.lsp.inlay_hint.enable()
+            -- map('<leader>th', function()
+            --   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+            -- end, '[T]oggle Inlay [H]ints')
           end
         end,
       })
@@ -568,7 +574,7 @@ require('lazy').setup {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- clangd = {},
-        -- gopls = {},
+        gopls = {},
         -- pyright = {},
         beautysh = {},
         cssls = {},
@@ -710,6 +716,7 @@ require('lazy').setup {
 
   { -- Autoformat
     'stevearc/conform.nvim',
+    lazy = false,
     opts = {
       notify_on_error = false,
       format_on_save = {
@@ -850,40 +857,40 @@ require('lazy').setup {
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
-  { -- Collection of various small independent plugins/modules
-    'echasnovski/mini.nvim',
-    version = '*',
-    config = function()
-      -- Better Around/Inside textobjects
-      --
-      -- Examples:
-      --  - va)  - [V]isually select [A]round [)]paren
-      --  - yinq - [Y]ank [I]nside [N]ext [']quote
-      --  - ci'  - [C]hange [I]nside [']quote
-      -- require('mini.ai').setup { n_lines = 100 }
-
-      -- Add/delete/replace surroundings (brackets, quotes, etc.)
-      --
-      -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
-      -- - sd'   - [S]urround [D]elete [']quotes
-      -- - sr)'  - [S]urround [R]eplace [)] [']
-      -- require('mini.surround').setup()
-
-      -- Extend f, F, t, T to work on multiple lines.
-      -- Repeat jump by pressing f, F, t, T again.
-      -- Highlight (after customizable delay) all possible target characters and stop it after some (customizable) idle time.
-      -- Normal, Visual, and Operator-pending (with full dot-repeat) modes are supported.
-      require('mini.jump').setup()
-
-      -- Simple and easy statusline.
-      --  You could remove this setup call if you don't like it,
-      --  and try some other statusline plugin
-      require('mini.statusline').setup()
-
-      -- ... and there is more!
-      --  Check out: https://github.com/echasnovski/mini.nvim
-    end,
-  },
+  -- { -- Collection of various small independent plugins/modules
+  --   'echasnovski/mini.nvim',
+  --   version = false,
+  --   config = function()
+  --     -- Better Around/Inside textobjects
+  --     --
+  --     -- Examples:
+  --     --  - va)  - [V]isually select [A]round [)]paren
+  --     --  - yinq - [Y]ank [I]nside [N]ext [']quote
+  --     --  - ci'  - [C]hange [I]nside [']quote
+  --     -- require('mini.ai').setup { n_lines = 100 }
+  --
+  --     -- Add/delete/replace surroundings (brackets, quotes, etc.)
+  --     --
+  --     -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
+  --     -- - sd'   - [S]urround [D]elete [']quotes
+  --     -- - sr)'  - [S]urround [R]eplace [)] [']
+  --     -- require('mini.surround').setup()
+  --
+  --     -- Extend f, F, t, T to work on multiple lines.
+  --     -- Repeat jump by pressing f, F, t, T again.
+  --     -- Highlight (after customizable delay) all possible target characters and stop it after some (customizable) idle time.
+  --     -- Normal, Visual, and Operator-pending (with full dot-repeat) modes are supported.
+  --     require('mini.jump').setup()
+  --
+  --     -- Simple and easy statusline.
+  --     --  You could remove this setup call if you don't like it,
+  --     --  and try some other statusline plugin
+  --     require('mini.statusline').setup()
+  --
+  --     -- ... and there is more!
+  --     --  Check out: https://github.com/echasnovski/mini.nvim
+  --   end,
+  -- },
 
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
