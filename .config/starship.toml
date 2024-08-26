@@ -1,5 +1,5 @@
 # Disable the blank line at the start of the prompt
-add_newline = false
+add_newline = true
 
 [cmd_duration]
 min_time = 500
@@ -11,7 +11,7 @@ truncate_to_repo = false
 style = "red"
 
 [line_break]
-disabled = true
+disabled = false
 
 [status]
 disabled = false
@@ -22,13 +22,13 @@ format = 'at [\[$time\]](bold cyan) '
 use_12hr = true
 
 [username]
-format       = "[$user](blue) at "
-disabled     = false
-show_always  = true
+format = "[$user](blue) at "
+disabled = false
+show_always = true
 
 [hostname]
 ssh_only = false
-format   = "[$hostname](bold blue) "
+format = "[$hostname](bold blue) "
 disabled = false
 
 [nodejs]

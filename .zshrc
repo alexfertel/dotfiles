@@ -130,10 +130,12 @@ alias daconfig='d add $MYNVIMCONFIG'
 alias dlog='d log --oneline --decorate --graph'
 alias dloga='dlog --all'
 
-alias ll='exa -l'
-alias lla='exa -la'
+alias ll='eza -l'
+alias lla='eza -la'
 
 alias nv='nordvpn'
+
+alias run='g++-14 -std=c++20 -O2 -Wall'
 
 autoload -Uz compinit
 compinit
@@ -163,3 +165,5 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export PATH="$HOME/.fuelup/bin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 export PATH="/Users/alexfertel/.local/bin:$PATH"
+
+. "$HOME/.cargo/env"
